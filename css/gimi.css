@@ -57,6 +57,27 @@ hr {
     font-size: 13px;
     transition: all .2s ease;
 }
+.btn-sm{
+    padding: 5px 10px;
+    font-size: 12px;
+}
+.btn-xs{
+    padding: 2px 8px;
+    font-size: 12px;
+}
+.btn-white{
+    color: #555;
+    background-color: #fff;
+    border-color: #555;
+}
+.btn-white:focus,
+.btn-white:hover,
+.btn-white.active{
+    color: #fff;
+    background-color: #555;
+    border-color: #555;
+    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0); 
+}
 .btn-blue{
     color: #337ab7;
     background-color: #fff;
@@ -466,7 +487,7 @@ input[type=checkbox].checkbix[data-color=yellow]:checked+label>span {
 }
 .main-content{
     margin-top: 44px;
-    margin-bottom: 60px;
+    padding-bottom: 50px;
 }
 .main-gray{
     background-color: #f9f9f9;
@@ -474,7 +495,7 @@ input[type=checkbox].checkbix[data-color=yellow]:checked+label>span {
 /*路径导航*/
 .breadcrumb {
     padding: 15px 30px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     list-style: none;
     background-color: #fff;
     border-radius: 0;
@@ -486,7 +507,7 @@ input[type=checkbox].checkbix[data-color=yellow]:checked+label>span {
     color: #555;
 }
 .breadcrumb > li > a:hover{
-    color: #FFBD02;
+    /*color: #FFBD02;*/
 }
 .breadcrumb > li + li:before {
     content: ">\00a0";
@@ -626,8 +647,19 @@ input[type=checkbox].checkbix[data-color=yellow]:checked+label>span {
     top: 0;
 }
 /*用户详情*/
-
-
+.content > .content-header > .content-title{
+    background: #EBEBEB;
+}
+.content > .content-header > .content-title > span{
+    display: block;
+    /*padding: 10px 30px;*/
+    background: #FFBD02;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+}
 
 
 

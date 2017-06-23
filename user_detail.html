@@ -75,7 +75,7 @@
         <div class="main">
             <!--头部-->
             <div class="main-header">
-                <b id="Clock"></b>
+                <span id="Clock"></span>
                 <div class="user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="images/user.png" alt="" />
@@ -93,274 +93,36 @@
             <div class="main-content">
                 <div class="main-nav">
                     <ol class="breadcrumb">
-                        <!--<li><a href="#">Home</a></li>
-                        <li><a href="#">Library</a></li>-->
-                        <li class="active">用户管理</li>
+                        <li><a href="#">用户管理</a></li>
+                        <li class="active">用户编辑</li>
+                        <li><a href="user_control.html" class="btn btn-xs btn-white">返回上级</a></li>
                     </ol>
                 </div>
 
                 <div class="content">
                     <div class="content-header">
-                        <div class="content-btn">
-                            <button type="button" class="btn btn-blue">添加</button>
-                            <button type="button" class="btn btn-green">启用</button>
-                            <button type="button" class="btn btn-yellow">禁用</button>
-                            <button type="button" class="btn btn-red">删除</button>
-                            <!--<button type="button" class="btn btn-purple">删除</button>-->
+                        
+                        <div class="content-title">
+                            <span>基本信息</span>
                         </div>
-                        <div class="content-search">
-                            <form class="">
-                                <select class="form-control inline-blok">
-                                    <option value="all">全部</option>
-                                    <option value="id">ID</option>
-                                    <option value="name">用户名</option>
-                                    <option value="account">帐号</option>
-                                    <option value="phone">手机号</option>
-                                </select>
-                                <div class="form-group has-feedback inline-blok">
-                                    <label class="sr-only" for="search">搜索</label>
-                                    <input class="form-control search-input" type="text" id="header-search" />
-                                    <i class="form-control-feedback fa fa-search" aria-hidden="true"></i>
-                                </div>
-                            </form>
-                        </div>
-
                     </div>
-                    <table class="table gimi-table table-striped" id="tableSort">
-                        <thead>
-                            <tr>
-                                <th>
-                                    <input id="userall-mycheckbox" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </th>
-                                <th class="table-sort sort-both sort-down" type="number">id</th>
-                                <th>头像</th>
-                                <th>用户名</th>
-                                <th>性别</th>
-                                <th>生日</th>
-                                <th>个人简介</th>
-                                <th>所在地</th>
-                                <th class="table-sort sort-both" type="number" >积分</th>
-                                <th class="table-sort sort-both" type="number">热度</th>
-                                <th>帐号</th>
-                                <th>密码</th>
-                                <th>手机号</th>
-                                <th class="table-sort sort-both" type="string" >注册时间</th>
-                                <th class="table-sort sort-both" type="number">发布文章</th>
-                                <th class="table-sort sort-both" type="number">发布评论</th>
-                                <th class="table-sort sort-both" type="number">订单</th>
-                                <th class="table-sort sort-both" type="string">状态</th>
-                                <th>编辑</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <input id="user1-mycheckbox" name="user-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td>0001</td>
-                                <td><img src="images/user.png" alt=""></td>
-                                <td>耿直BOY</td>
-                                <td>男</td>
-                                <td>1990-02-01</td>
-                                <td>曾经获得迪尼斯全球最能吃奖曾经获得迪尼斯全球最能吃奖</td>
-                                <td>北京</td>
-                                <td>2399</td>
-                                <td>123</td>
-                                <td>github</td>
-                                <td>******</td>
-                                <td>18511009922</td>
-                                <td>1991-02-01</td>
-                                <td class="text-blue">23</td>
-                                <td class="text-blue">23</td>
-                                <td class="text-blue">23</td>
-                                <td class="text-green">正常</td>
-                                <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="user2-mycheckbox" name="user-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td>0002</td>
-                                <td><img src="images/user.png" alt=""></td>
-                                <td>大仙</td>
-                                <td>女</td>
-                                <td>2017-02-01</td>
-                                <td>失敬失敬打开小吃街大家觉得小昆虫在出口</td>
-                                <td>天津</td>
-                                <td>5991</td>
-                                <td>1567</td>
-                                <td>toyoun</td>
-                                <td>******</td>
-                                <td>13511005566</td>
-                                <td>2006-11-25</td>
-                                <td class="text-blue">244</td>
-                                <td class="text-blue">111</td>
-                                <td class="text-blue">98</td>
-                                <td class="text-yellow">禁用</td>
-                                <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="user3-mycheckbox" name="user-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td>0003</td>
-                                <td><img src="images/user.png" alt=""></td>
-                                <td>大仙</td>
-                                <td>女</td>
-                                <td>2017-02-01</td>
-                                <td>失敬失敬打开小吃街大家觉得小昆虫在出口</td>
-                                <td>天津</td>
-                                <td>5991</td>
-                                <td>1567</td>
-                                <td>toyoun</td>
-                                <td>******</td>
-                                <td>13511005566</td>
-                                <td>2006-11-25</td>
-                                <td class="text-blue">244</td>
-                                <td class="text-blue">111</td>
-                                <td class="text-blue">98</td>
-                                <td class="text-yellow">禁用</td>
-                                <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="user4-mycheckbox" name="user-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td>0004</td>
-                                <td><img src="images/user.png" alt=""></td>
-                                <td>大仙</td>
-                                <td>女</td>
-                                <td>1994-02-01</td>
-                                <td>手机上计算机世界就是就是就是就是</td>
-                                <td>天津</td>
-                                <td>1245</td>
-                                <td>667</td>
-                                <td>toyoun</td>
-                                <td>******</td>
-                                <td>13511005566</td>
-                                <td>2006-11-25</td>
-                                <td class="text-blue">77</td>
-                                <td class="text-blue">9986</td>
-                                <td class="text-blue">55</td>
-                                <td class="text-yellow">禁用</td>
-                                <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="user5-mycheckbox" name="user-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td>0005</td>
-                                <td><img src="images/user.png" alt=""></td>
-                                <td>大仙</td>
-                                <td>女</td>
-                                <td>1994-02-01</td>
-                                <td>手机上计算机世界就是就是就是就是</td>
-                                <td>天津</td>
-                                <td>876</td>
-                                <td>456</td>
-                                <td>toyoun</td>
-                                <td>******</td>
-                                <td>13511005566</td>
-                                <td>2006-11-25</td>
-                                <td class="text-blue">93</td>
-                                <td class="text-blue">386</td>
-                                <td class="text-blue">46</td>
-                                <td class="text-green">正常</td>
-                                <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="user6-mycheckbox" name="user-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td>0006</td>
-                                <td><img src="images/user.png" alt=""></td>
-                                <td>大仙</td>
-                                <td>女</td>
-                                <td>1994-02-01</td>
-                                <td>手机上计算机世界就是就是就是就是</td>
-                                <td>天津</td>
-                                <td>1245</td>
-                                <td>667</td>
-                                <td>toyoun</td>
-                                <td>******</td>
-                                <td>13511005566</td>
-                                <td>2006-11-25</td>
-                                <td class="text-blue">77</td>
-                                <td class="text-blue">9986</td>
-                                <td class="text-blue">55</td>
-                                <td class="text-yellow">禁用</td>
-                                <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="user7-mycheckbox" name="user-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td>0007</td>
-                                <td><img src="images/user.png" alt=""></td>
-                                <td>大仙</td>
-                                <td>女</td>
-                                <td>1994-02-01</td>
-                                <td>手机上计算机世界就是就是就是就是</td>
-                                <td>天津</td>
-                                <td>876</td>
-                                <td>456</td>
-                                <td>toyoun</td>
-                                <td>******</td>
-                                <td>13511005566</td>
-                                <td>2006-11-25</td>
-                                <td class="text-blue">93</td>
-                                <td class="text-blue">386</td>
-                                <td class="text-blue">46</td>
-                                <td class="text-green">正常</td>
-                                <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="user8-mycheckbox" name="user-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td>0008</td>
-                                <td><img src="images/user.png" alt=""></td>
-                                <td>大仙</td>
-                                <td>女</td>
-                                <td>1994-02-01</td>
-                                <td>手机上计算机世界就是就是就是就是</td>
-                                <td>天津</td>
-                                <td>1245</td>
-                                <td>667</td>
-                                <td>toyoun</td>
-                                <td>******</td>
-                                <td>13511005566</td>
-                                <td>2006-11-25</td>
-                                <td class="text-blue">77</td>
-                                <td class="text-blue">9986</td>
-                                <td class="text-blue">55</td>
-                                <td class="text-yellow">禁用</td>
-                                <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="user9-mycheckbox" name="user-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td>0009</td>
-                                <td><img src="images/user.png" alt=""></td>
-                                <td>大仙</td>
-                                <td>女</td>
-                                <td>1994-02-01</td>
-                                <td>手机上计算机世界就是就是就是就是</td>
-                                <td>天津</td>
-                                <td>876</td>
-                                <td>456</td>
-                                <td>toyoun</td>
-                                <td>******</td>
-                                <td>13511005566</td>
-                                <td>2006-11-25</td>
-                                <td class="text-blue">93</td>
-                                <td class="text-blue">386</td>
-                                <td class="text-blue">46</td>
-                                <td class="text-green">正常</td>
-                                <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>
-                        </tbody>
+                    <table class="table table-bordered edit-table">
+                        <tr>
+                            <td>安包</td>
+                            <td>安包</td>
+                        </tr>
+                        <tr>
+                            <td>安包</td>
+                            <td>安包</td>
+                        </tr>
+                        <tr>
+                            <td>安包</td>
+                            <td>安包</td>
+                        </tr>
+                        <tr>
+                            <td>安包</td>
+                            <td>安包</td>
+                        </tr>
                     </table>
                     <div class="content-footer">
                         <div class="page-text">
