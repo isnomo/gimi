@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit" />
+    <link rel="icon" href="">
+    <title>Gimi叽咪</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/gimi.css">
+    <link rel="stylesheet" href="css/checkbix.min.css">
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <section>
+        <!--左侧边栏-->
+        <div class="left-side">
+            <!--logo-->
+            <div class="logo-icon">
+                <a href=""><img src="images/gimi-logo.png" alt=""></a>
+            </div>
+            <!--nav-->
+            <div class="nav-side">
+                <ul class="nav nav-pills nav-stacked custom-nav">
+                    <li class="active"><a href=""><i class="sj-icon"></i> <span>数据统计</span></a></li>
+                    <li>
+                        <a href="user_control.html"><i class="yh-icon"></i> <span>用户管理</span></a>
+                        <div class="num-icon">500</div>
+                    </li>
+                    <li class="menu-list">
+                        <a href=""><i class="wz-icon"></i> <span>文章管理</span></a>
+                        <ul class="sub-menu-list">
+                            <li><a href=""> 文章管理</a>
+                                <div class="num-icon">500</div>
+                            </li>
+                            <li><a href=""> 评论管理</a></li>
+                            <li><a href=""> 标签管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-list">
+                        <a href=""><i class="sp-icon"></i> <span>商品管理</span></a>
+                        <ul class="sub-menu-list">
+                            <li><a href=""> 普通商品</a></li>
+                            <li><a href=""> 积分商品</a></li>
+                            <li><a href=""> 线下体验</a></li>
+                            <li><a href=""> 分类管理</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href=""><i class="dd-icon"></i> <span>订单管理</span></a></li>
+                    <li><a href=""><i class="xx-icon"></i> <span>消息推送</span></a>
+                        <div class="num-icon">500</div>
+                    </li>
+                    <li><a href=""><i class="jt-icon"></i> <span>静态信息</span></a>
+                        <div class="num-icon">500</div>
+                    </li>
+                </ul>
+
+
+
+            </div>
+        </div>
+
+        <!--右边主体内容-->
+        <div class="main">
+            <!--头部-->
+            <div class="main-header">
+                <b id="Clock"></b>
+                <div class="user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="images/user.png" alt="" />
+                            admin
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                    <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                        <li><a href="#"><i class="fa fa-user"></i>  个人资料</a></li>
+                        <li><a href="#"><i class="fa fa-cog"></i>  设置</a></li>
+                        <li><a href="#"><i class="fa fa-sign-out"></i> 退出登录</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--内容-->
+            <div class="main-content main-gray">
+                <div class="main-nav">
+                    <ol class="breadcrumb">
+                        <!--<li><a href="#">Home</a></li>
+                        <li><a href="#">Library</a></li>-->
+                        <li class="active">数据统计</li>
+                    </ol>
+                </div>
+
+                <div class="content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="content-div content-first">
+                                <div class="row">
+                                    <div class="col-sm-8"></div>
+                                    <div class="col-sm-4"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="content-div content-middle">
+                                <h4>前十文章热度分析</h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="content-div content-middle">
+                                <h4>新增测评数分析</h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="content-div content-middle">
+                                <h4>不同位置商品展点比</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="content-div content-middle">
+                                <h4>达人影响力</h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="content-div content-middle">
+                                <h4>商品售卖情况</h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="content-div content-middle">
+                                <h4>各个页面到达率</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="content-footer">
+                                <h4>商品数据统计</h4>
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td>商品数量</td>
+                                        <td>117</td>
+                                    </tr>
+                                    <tr>
+                                        <td>上架商品数量</td>
+                                        <td>117</td>
+                                    </tr>
+                                    <tr>
+                                        <td>验货成功次数</td>
+                                        <td>117</td>
+                                    </tr>
+                                    <tr>
+                                        <td>积分商品兑换量</td>
+                                        <td>117</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="content-footer">
+                                <h4>文章数据统计</h4>
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td>总文章数</td>
+                                        <td>200</td>
+                                    </tr>
+                                    <tr>
+                                        <td>今日浏览量</td>
+                                        <td>3239</td>
+                                    </tr>
+                                    <tr>
+                                        <td>新赠测评</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>文章最高热度</td>
+                                        <td>999</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!--JS-->
+    <script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/jquery-1.12.4.min.js"><\/script>')
+    </script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/checkbix.min.js"></script>
+    <script src="js/tableSort.js"></script>
+    <script src="js/nomoJS.js"></script>
+    <script src="js/gimi.js"></script>
+
+
+</body>
+
+</html>
