@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit" />
     <link rel="icon" href="">
-    <title>Gimi叽咪</title>
+    <title>编辑消息 -- Gimi叽咪</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -33,7 +33,7 @@
             <!--nav-->
             <div class="nav-side">
                 <ul class="nav nav-pills nav-stacked custom-nav">
-                    <li class="active"><a href="index.html"><i class="sj-icon"></i> <span>数据统计</span></a></li>
+                    <li><a href="index.html"><i class="sj-icon"></i> <span>数据统计</span></a></li>
                     <li>
                         <a href="user_control.html"><i class="yh-icon"></i> <span>用户管理</span></a>
                         <div class="num-icon">500</div>
@@ -57,7 +57,7 @@
                     </li>
 
                     <li><a href="order_control.html"><i class="dd-icon"></i> <span>订单管理</span></a><div class="num-icon">500</div></li>
-                    <li><a href="push_control.html"><i class="xx-icon"></i> <span>消息推送</span></a><div class="num-icon">500</div></li>
+                    <li class="active"><a href="push_control.html"><i class="xx-icon"></i> <span>消息推送</span></a><div class="num-icon">500</div></li>
                     <li><a href=""><i class="jt-icon"></i> <span>静态信息</span></a><div class="num-icon">500</div></li>
                 </ul>
             </div>
@@ -82,113 +82,65 @@
                 </div>
             </div>
             <!--内容-->
-            <div class="main-content main-gray">
+            <div class="main-content">
                 <div class="main-nav">
                     <ol class="breadcrumb">
-                        <!--<li><a href="#">Home</a></li>
-                        <li><a href="#">Library</a></li>-->
-                        <li class="active">数据统计</li>
+                        <li><a href="push_control.html">消息推送</a></li>
+                        <li class="active">编辑消息</li>
+                        <li><a href="push_control.html" class="btn btn-xs btn-white">返回上级</a></li>
                     </ol>
                 </div>
 
                 <div class="content">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="content-div content-first">
-                                <div class="row">
-                                    <div class="col-sm-8"></div>
-                                    <div class="col-sm-4"></div>
-                                </div>
-                            </div>
+                    <div class="content-header">
+                        <div class="content-title">
+                            <ul class="list-inline">
+                                <li class="active"><a data-toggle="tab" href="#tab1">基本信息</a></li>
+                            </ul>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="content-div content-middle">
-                                <h4>前十文章热度分析</h4>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="content-div content-middle">
-                                <h4>新增测评数分析</h4>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="content-div content-middle">
-                                <h4>不同位置商品展点比</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="content-div content-middle">
-                                <h4>达人影响力</h4>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="content-div content-middle">
-                                <h4>商品售卖情况</h4>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="content-div content-middle">
-                                <h4>各个页面到达率</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="content-footer">
-                                <h4>商品数据统计</h4>
-                                <table class="table table-bordered">
+                    <form action="">
+                        <div class="tab-content">
+                            <div id="tab1" class="tab-pane fade in active tab">
+                                <table class="table table-bordered edit-table">
                                     <tr>
-                                        <td>商品数量</td>
-                                        <td>117</td>
+                                        <td>推送时间：</td>
+                                        <td>
+                                            <div class="edit-selects">
+                                                <select class="form-control">
+                                                    <option value="">2017-11-11</option>
+                                                    <option value="">2017-11-11</option>
+                                                </select>
+                                                <select class="form-control">
+                                                    <option value="">18点</option>
+                                                    <option value="">19点</option>
+                                                </select>
+                                                <select class="form-control">
+                                                    <option value="">20分</option>
+                                                    <option value="">21分</option>
+                                                </select>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td>上架商品数量</td>
-                                        <td>117</td>
-                                    </tr>
-                                    <tr>
-                                        <td>验货成功次数</td>
-                                        <td>117</td>
-                                    </tr>
-                                    <tr>
-                                        <td>积分商品兑换量</td>
-                                        <td>117</td>
+                                        <td>推送内容：</td>
+                                        <td>
+                                            <textarea class="form-control input-big" cols="30" rows="10"></textarea>
+                                        </td>
+                                        
                                     </tr>
                                 </table>
                             </div>
+
                         </div>
-                        <div class="col-sm-6">
-                            <div class="content-footer">
-                                <h4>文章数据统计</h4>
-                                <table class="table table-bordered">
-                                    <tr>
-                                        <td>总文章数</td>
-                                        <td>200</td>
-                                    </tr>
-                                    <tr>
-                                        <td>今日浏览量</td>
-                                        <td>3239</td>
-                                    </tr>
-                                    <tr>
-                                        <td>新赠测评</td>
-                                        <td>10</td>
-                                    </tr>
-                                    <tr>
-                                        <td>文章最高热度</td>
-                                        <td>999</td>
-                                    </tr>
-                                </table>
-                            </div>
+                        <div class="edit-btn">
+                            <button type="submit" class="btn btn-purple active btn-block">保存</button>
+                        </div>
+                        <div class="edit-btn">
+                            <button type="submit" class="btn btn-green active btn-block">发布</button>
                         </div>
 
-                    </div>
-
+                    </form>
                 </div>
 
             </div>
@@ -208,8 +160,9 @@
     <script src="js/tableSort.js"></script>
     <script src="js/nomoJS.js"></script>
     <script src="js/gimi.js"></script>
+    <script>
 
-
+    </script>
 </body>
 
 </html>

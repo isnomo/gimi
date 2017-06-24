@@ -65,11 +65,51 @@
     
 
     // 用户管理全选
-    $('#userall-mycheckbox').change(function () {
+    $('#userAll-mycheckbox').change(function () {
         if (this.checked == true) {
             selectAll('user-contorl', 'all');
         } else {
             selectAll('user-contorl', 'notAll');
+        }
+    });
+     // 用户管理全选
+    $('#postAll-mycheckbox').change(function () {
+        if (this.checked == true) {
+            selectAll('post-contorl', 'all');
+        } else {
+            selectAll('post-contorl', 'notAll');
+        }
+    });
+     // 评论管理全选
+    $('#commentAll-mycheckbox').change(function () {
+        if (this.checked == true) {
+            selectAll('comment-contorl', 'all');
+        } else {
+            selectAll('comment-contorl', 'notAll');
+        }
+    });
+      // 标签管理全选
+    $('#tagAll-mycheckbox').change(function () {
+        if (this.checked == true) {
+            selectAll('tag-contorl', 'all');
+        } else {
+            selectAll('tag-contorl', 'notAll');
+        }
+    });
+      // 标签管理全选
+    $('#orderAll-mycheckbox').change(function () {
+        if (this.checked == true) {
+            selectAll('order-contorl', 'all');
+        } else {
+            selectAll('order-contorl', 'notAll');
+        }
+    });
+        // 标签管理全选
+    $('#pushAll-mycheckbox').change(function () {
+        if (this.checked == true) {
+            selectAll('push-contorl', 'all');
+        } else {
+            selectAll('push-contorl', 'notAll');
         }
     });
     

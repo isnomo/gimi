@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit" />
     <link rel="icon" href="">
-    <title>用户详情 -- Gimi叽咪</title>
+    <title>文章编辑 -- Gimi叽咪</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -32,16 +32,16 @@
             </div>
             <!--nav-->
             <div class="nav-side">
-                <ul class="nav nav-pills nav-stacked custom-nav">
+               <ul class="nav nav-pills nav-stacked custom-nav">
                     <li><a href="index.html"><i class="sj-icon"></i> <span>数据统计</span></a></li>
-                    <li class="active">
+                    <li>
                         <a href="user_control.html"><i class="yh-icon"></i> <span>用户管理</span></a>
                         <div class="num-icon">500</div>
                     </li>
-                    <li class="menu-list">
+                    <li class="menu-list nav-active">
                         <a href=""><i class="wz-icon"></i> <span>文章管理</span></a>
                         <ul class="sub-menu-list">
-                            <li><a href="post_control.html"> 文章管理</a><div class="num-icon">500</div></li>
+                            <li class="active"><a href="post_control.html"> 文章管理</a><div class="num-icon">500</div></li>
                             <li><a href="comment_control.html"> 评论管理</a><div class="num-icon">500</div></li>
                             <li><a href="tag_control.html"> 标签管理</a><div class="num-icon">500</div></li>
                         </ul>
@@ -85,117 +85,133 @@
             <div class="main-content">
                 <div class="main-nav">
                     <ol class="breadcrumb">
-                        <li><a href="#">用户管理</a></li>
-                        <li class="active">用户编辑</li>
-                        <li><a href="user_control.html" class="btn btn-xs btn-white">返回上级</a></li>
+                        <li><a href="post_control.html">文章管理</a></li>
+                        <li><a href="post_control.html">文章管理</a></li>
+                        <li class="active">文章编辑</li>
+                        <li><a href="post_control.html" class="btn btn-xs btn-white">返回上级</a></li>
                     </ol>
                 </div>
 
                 <div class="content">
                     <div class="content-header">
+
                         <div class="content-title">
                             <ul class="list-inline">
                                 <li class="active"><a data-toggle="tab" href="#tab1">基本信息</a></li>
+                                <li><a data-toggle="tab" href="#tab2">高级设置</a></li>
                             </ul>
                         </div>
                     </div>
+                    <form action="">
                     <div class="tab-content">
                         <div id="tab1" class="tab-pane fade in active tab">
-                            <form action="">
                                 <table class="table table-bordered edit-table">
                                     <tr>
-                                        <td>用户名：</td>
+                                        <td>文章标题：</td>
+                                        <td>
+                                            <input type="text" class="form-control input-sm" name="" placeholder="文章标题不得超过30字" value="">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>创建者ID：</td>
                                         <td>
                                             <input type="text" class="form-control input-sm" name="" value="">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>性别：</td>
-                                        <td>
-                                            <label class="radio-inline">
-                                        <input type="radio" name="xb" id="inlineRadio1" value="option1"> 男
-                                    </label>
-                                            <label class="radio-inline">
-                                        <input type="radio" name="xb" id="inlineRadio2" value="option2"> 女
-                                    </label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>头像：</td>
+                                        <td>标题图片：</td>
                                         <td>安包</td>
                                     </tr>
                                     <tr>
-                                        <td>用户ID：</td>
-                                        <td class="gray-text">28291293</td>
+                                        <td>图片：</td>
+                                        <td>安包</td>
                                     </tr>
                                     <tr>
-                                        <td>生日：</td>
-                                        <td>
-                                            <select class="form-control">
-                                        <option value="">1992</option>
-                                    </select>
-                                        </td>
+                                        <td>正文：</td>
+                                        <td>安包</td>
                                     </tr>
-                                    <tr>
-                                        <td>所在地：</td>
+                                     <tr>
+                                        <td>标签：</td>
                                         <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>积分：</td>
-                                        <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>热度：</td>
-                                        <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>账号：</td>
-                                        <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>密码：</td>
-                                        <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>注册时间：</td>
-                                        <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>手机号：</td>
-                                        <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
+                                            <div class="edit-selects">
+                                                <select class="form-control">
+                                                    <option value="">美容</option>
+                                                    <option value="">美容</option>
+                                                </select>
+                                                <select class="form-control">
+                                                    <option value="">美容</option>
+                                                    <option value="">美容</option>
+                                                </select>
+                                                <select class="form-control">
+                                                    <option value="">美容</option>
+                                                    <option value="">美容</option>
+                                                </select>
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>状态：</td>
                                         <td>
                                             <label class="radio-inline text-green">
-                                        <input type="radio" name="zt"  value="option1"> 正常
-                                    </label>
+                                                <input type="radio" name="zt"  value="option1" checked> 可见
+                                            </label>
+                                            <label class="radio-inline text-yellow">
+                                                <input type="radio" name="zt"  value="option2"> 待审核
+                                            </label>
                                             <label class="radio-inline text-red">
-                                        <input type="radio" name="zt"  value="option2"> 禁用
+                                                <input type="radio" name="zt"  value="option2"> 禁用
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>是否置顶：</td>
+                                        <td>
+                                            <label class="radio-inline">
+                                        <input type="radio" name="xb" id="inlineRadio1" value="option1" checked> 普通
+                                    </label>
+                                            <label class="radio-inline">
+                                        <input type="radio" name="xb" id="inlineRadio2" value="option2"> 置顶
                                     </label>
                                         </td>
                                     </tr>
                                 </table>
-                                <div class="edit-btn">
+                        </div>  
+                        <div id="tab2" class="tab-pane fade tab">
+                                <table class="table table-bordered edit-table">
+                                    <tr>
+                                        <td>收藏数：</td>
+                                        <td>
+                                            <input type="text" class="form-control input-sm" name="" value="">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>点赞数：</td>
+                                        <td>
+                                            <input type="text" class="form-control input-sm" name="" value="">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>被举报数：</td>
+                                        <td>
+                                            <input type="text" class="form-control input-sm" name="" value="">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浏览数：</td>
+                                        <td>
+                                            <input type="text" class="form-control input-sm" name="" value="">
+                                        </td>
+                                    </tr>
+                                </table>
+                        </div>
+                    </div>
+                    <div class="edit-btn">
                                     <button type="submit" class="btn btn-purple active btn-block">保存</button>
                                 </div>
-                            </form>
-                        </div>  
-                    </div>
+                                <div class="edit-btn">
+                                    <button type="button" class="btn btn-yellow active btn-block">预览</button>
+                                </div>
+                    </form>
                 </div>
 
             </div>

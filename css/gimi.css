@@ -610,7 +610,7 @@ input[type=checkbox].checkbix[data-color=yellow]:checked+label>span {
     font-size: 22px;
 }
 
-.gimi-table  > tbody > tr > td:nth-child(7){
+.gimi-table  > tbody > tr > td.table-text{
     max-width: 150px;
     overflow: hidden;
     white-space: nowrap;
@@ -650,40 +650,54 @@ input[type=checkbox].checkbix[data-color=yellow]:checked+label>span {
 .content > .content-header > .content-title{
     background: #EBEBEB;
 }
-.content > .content-header > .content-title > span{
+.content > .content-header > .content-title > ul{
+    margin-bottom: 0;
+}
+.content > .content-header > .content-title > ul > li a{
     display: block;
-    /*padding: 10px 30px;*/
-    background: #FFBD02;
     width: 120px;
     height: 40px;
     line-height: 40px;
     text-align: center;
+    color: #333;
+}
+.content > .content-header > .content-title > ul > li.active a{
+    background: #FFBD02;
     color: #fff;
 }
-.content > form > .edit-table{
+.edit-table{
     margin-top: 20px;
 }
-.content > form > .edit-table tr td:first-child{
+.edit-table tr td:first-child{
     width: 120px;
     text-align: right;
     font-weight: 600;
     padding: 20px 15px 20px 0;
 }
-.content > form > .edit-table tr td:last-child{
+.edit-table tr td:last-child{
     padding: 15px;
     line-height: 30px;
 }
-.content > form > .edit-table tr td:last-child .form-control{
+.edit-table tr td:last-child .form-control{
     width: 280px;
+}
+.edit-table tr td:last-child .edit-selects .form-control{
+    display: inline-block;
+    width: 100px;
+    margin-right: 5px;
 }
 .radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"]{
     top: 5px;
 }
-.content > form > .edit-table tr td.gray-text{
+.edit-table tr td.gray-text{
     color: #999;
 }
-.content > form > .edit-btn{
+.edit-btn{
     width: 120px;
+    display: inline-block;
+}
+.edit-table tr td:last-child .input-big{
+    width: 560px;
 }
 
 
