@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit" />
     <link rel="icon" href="">
-    <title>文章编辑 -- Gimi叽咪</title>
+    <title>商品编辑 -- Gimi叽咪</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -38,18 +38,18 @@
                         <a href="user_control.html"><i class="yh-icon"></i> <span>用户管理</span></a>
                         <div class="num-icon">500</div>
                     </li>
-                    <li class="menu-list nav-active">
+                    <li class="menu-list">
                         <a href=""><i class="wz-icon"></i> <span>文章管理</span></a>
                         <ul class="sub-menu-list">
-                            <li class="active"><a href="post_control.html"> 文章管理</a><div class="num-icon">500</div></li>
+                            <li><a href="post_control.html"> 文章管理</a><div class="num-icon">500</div></li>
                             <li><a href="comment_control.html"> 评论管理</a><div class="num-icon">500</div></li>
                             <li><a href="tag_control.html"> 标签管理</a><div class="num-icon">500</div></li>
                         </ul>
                     </li>
-                    <li class="menu-list">
+                    <li class="menu-list nav-active">
                         <a href=""><i class="sp-icon"></i> <span>商品管理</span></a>
                         <ul class="sub-menu-list">
-                            <li><a href="general_control.html"> 普通商品</a><div class="num-icon">500</div></li>
+                            <li class="active"><a href="general_control.html"> 普通商品</a><div class="num-icon">500</div></li>
                             <li><a href="int_control.html"> 积分商品</a><div class="num-icon">500</div></li>
                             <li><a href="experience_control.html"> 线下体验</a><div class="num-icon">500</div></li>
                             <li><a href="class_control.html"> 分类管理</a><div class="num-icon">500</div></li>
@@ -85,10 +85,10 @@
             <div class="main-content">
                 <div class="main-nav">
                     <ol class="breadcrumb">
-                        <li><a href="post_control.html">文章管理</a></li>
-                        <li><a href="post_control.html">文章管理</a></li>
-                        <li class="active">编辑文章</li>
-                        <li><a href="post_control.html" class="btn btn-xs btn-white">返回上级</a></li>
+                        <li><a href="#">商品管理</a></li>
+                        <li><a href="general_control.html">普通商品</a></li>
+                        <li class="active">编辑商品</li>
+                        <li><a href="general_control.html" class="btn btn-xs btn-white">返回上级</a></li>
                     </ol>
                 </div>
 
@@ -98,7 +98,6 @@
                         <div class="content-title">
                             <ul class="list-inline">
                                 <li class="active"><a data-toggle="tab" href="#tab1">基本信息</a></li>
-                                <li><a data-toggle="tab" href="#tab2">高级设置</a></li>
                             </ul>
                         </div>
                     </div>
@@ -107,19 +106,19 @@
                         <div id="tab1" class="tab-pane fade in active tab">
                                 <table class="table table-bordered edit-table">
                                     <tr>
-                                        <td>文章标题：</td>
+                                        <td>商品名称：</td>
                                         <td>
                                             <input type="text" class="form-control input-sm" name="" placeholder="文章标题不得超过30字" value="">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>创建者ID：</td>
+                                        <td>价格：</td>
                                         <td>
                                             <input type="text" class="form-control input-sm" name="" value="">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>标题图片：</td>
+                                        <td>封面图片：</td>
                                         <td>
                                             <div class="img-list" id="title-img">
                                                 <div class="change-title">
@@ -156,8 +155,25 @@
                                         <td>正文：</td>
                                         <td>安包</td>
                                     </tr>
+                                    <tr>
+                                        <td>包邮说明：</td>
+                                        <td>
+                                            <input type="text" class="form-control input-sm" name="" value="">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>颜色：</td>
+                                        <td>
+                                            <div class="input-group" id="color-input">
+                                                <span class="input-group-addon color-span"></span>
+                                                <input type="text" class="form-control" placeholder="颜色名称">
+                                                <input type="text" class="form-control" placeholder="#色值" id="color-num">
+                                            </div>
+                                        </td>
+                                    </tr>
+                
                                      <tr>
-                                        <td>标签：</td>
+                                        <td>所属分类：</td>
                                         <td>
                                             <div class="edit-selects">
                                                 <select class="form-control">
@@ -175,67 +191,14 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>状态：</td>
-                                        <td>
-                                            <label class="radio-inline text-green">
-                                                <input type="radio" name="zt"  value="option1" checked> 可见
-                                            </label>
-                                            <label class="radio-inline text-yellow">
-                                                <input type="radio" name="zt"  value="option2"> 待审核
-                                            </label>
-                                            <label class="radio-inline text-red">
-                                                <input type="radio" name="zt"  value="option2"> 禁用
-                                            </label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>是否置顶：</td>
-                                        <td>
-                                            <label class="radio-inline">
-                                        <input type="radio" name="xb" id="inlineRadio1" value="option1" checked> 普通
-                                    </label>
-                                            <label class="radio-inline">
-                                        <input type="radio" name="xb" id="inlineRadio2" value="option2"> 置顶
-                                    </label>
-                                        </td>
-                                    </tr>
                                 </table>
                         </div>  
-                        <div id="tab2" class="tab-pane fade tab">
-                                <table class="table table-bordered edit-table">
-                                    <tr>
-                                        <td>收藏数：</td>
-                                        <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>点赞数：</td>
-                                        <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>被举报数：</td>
-                                        <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>浏览数：</td>
-                                        <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
-                                        </td>
-                                    </tr>
-                                </table>
-                        </div>
                     </div>
                     <div class="edit-btn">
                                     <button type="submit" class="btn btn-purple active btn-block">保存</button>
                                 </div>
                                 <div class="edit-btn">
-                                    <button type="button" class="btn btn-yellow active btn-block">预览</button>
+                                    <button type="button" class="btn btn-green active btn-block">发布</button>
                                 </div>
                     </form>
                 </div>
