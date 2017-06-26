@@ -80,7 +80,7 @@
             alert('图片过大,不得超过2M！');
             return false;
         }
-        $('#title-img>img').attr({'src':imgUrl,'width':'109px;'});
+        $('#title-img>img').attr({'src':imgUrl,'width':'109px;','height':'109px;'});
         //$.ajax({
             //    type: "POST",
             //    url: "",
