@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/gimi.css">
     <link rel="stylesheet" href="css/checkbix.min.css">
-
+    <!--date-->
+    <link rel="stylesheet" href="css/flatpickr.min.css">
+    <link rel="stylesheet" href="css/flatpickr.confetti.min.css">
+    <link rel="stylesheet" href="css/gimi.css">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
@@ -106,20 +108,7 @@
                                     <tr>
                                         <td>推送时间：</td>
                                         <td>
-                                            <div class="edit-selects">
-                                                <select class="form-control">
-                                                    <option value="">2017-11-11</option>
-                                                    <option value="">2017-11-11</option>
-                                                </select>
-                                                <select class="form-control">
-                                                    <option value="">18点</option>
-                                                    <option value="">19点</option>
-                                                </select>
-                                                <select class="form-control">
-                                                    <option value="">20分</option>
-                                                    <option value="">21分</option>
-                                                </select>
-                                            </div>
+                                            <input id="date-push" class="flatpickr form-control input-sm" data-enable-time=true data-allow-input=true data-time_24hr=true>
                                         </td>
                                     </tr>
                                     <tr>
@@ -159,9 +148,12 @@
     <script src="js/checkbix.min.js"></script>
     <script src="js/tableSort.js"></script>
     <script src="js/nomoJS.js"></script>
+    <!--date-->
+    <script src="js/flatpickr.min.js"></script>
+    <script src="js/flatpickr.l10n.zh.js"></script>
     <script src="js/gimi.js"></script>
     <script>
-
+        $('#date-push').flatpickr();
     </script>
 </body>
 

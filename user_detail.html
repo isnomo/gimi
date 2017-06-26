@@ -13,10 +13,11 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/gimi.css">
     <link rel="stylesheet" href="css/checkbix.min.css">
     <!--date-->
-    <link rel="stylesheet" href="css/daterangepicker.css">
+    <link rel="stylesheet" href="css/flatpickr.min.css">
+    <link rel="stylesheet" href="css/flatpickr.confetti.min.css">
+    <link rel="stylesheet" href="css/gimi.css">
 
     <!--[if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
@@ -140,7 +141,7 @@
                                     <tr>
                                         <td>生日：</td>
                                         <td>
-                                           <input id="date-birthday" size="30" class="form-control input-sm">
+                                           <input id="date-birthday" class="flatpickr form-control input-sm" data-date-format="Y-m-d">
                                         </td>
                                     </tr>
                                     <tr>
@@ -222,15 +223,11 @@
     <script src="js/tableSort.js"></script>
     <script src="js/nomoJS.js"></script>
     <!--date-->
-    <script src="js/moment.min.js"></script>
-    <script src="js/jquery.daterangepicker.js"></script>
+    <script src="js/flatpickr.min.js"></script>
+    <script src="js/flatpickr.l10n.zh.js"></script>
     <script src="js/gimi.js"></script>
     <script>
-        $('#date-birthday').dateRangePicker({
-            autoClose: true,
-            singleDate : true,
-            showShortcuts: false 
-        });
+        $('#date-birthday').flatpickr();
     </script>
 </body>
 

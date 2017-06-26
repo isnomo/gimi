@@ -168,6 +168,13 @@ input[type=checkbox].checkbix[data-color=purple]:checked+label>span {
     margin: 20px 30px;
     line-height: 44px;
 }
+.flatpickr-day.nextMonthDay:focus, .flatpickr-day.nextMonthDay:hover, .flatpickr-day.prevMonthDay:focus, .flatpickr-day.prevMonthDay:hover, .flatpickr-day:focus, .flatpickr-day:hover {
+    cursor: pointer;
+    outline: 0;
+    background: #ffb866;
+    border-color: #ffb866;
+    color: #fff;
+}
 
 /*============================================================
                         以上基础样式
@@ -691,6 +698,7 @@ input[type=checkbox].checkbix[data-color=purple]:checked+label>span {
 }
 .edit-table tr td:last-child .form-control{
     width: 280px;
+    background-color: transparent;
 }
 .edit-table tr td:last-child .edit-selects .form-control{
     display: inline-block;
@@ -778,7 +786,7 @@ input[type=checkbox].checkbix[data-color=purple]:checked+label>span {
 .shop-select select{
     display: inline-block;
     width: 90px;
-    height: 30px;
+    height: 32px;
     margin-right: 5px;
 }
 .shop-title:after{
@@ -868,6 +876,24 @@ input[type=checkbox].checkbix[data-color=purple]:checked+label>span {
 #color-input .color-span{
     padding: 6px 30px;
 }
+.input-group #date-star,.input-group #date-end{
+    width: 140px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*电脑*/

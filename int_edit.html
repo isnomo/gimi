@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/gimi.css">
     <link rel="stylesheet" href="css/checkbix.min.css">
-
+    <!--date-->
+    <link rel="stylesheet" href="css/flatpickr.min.css">
+    <link rel="stylesheet" href="css/flatpickr.confetti.min.css">
+    <link rel="stylesheet" href="css/gimi.css">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
@@ -202,7 +204,10 @@
                                     <tr>
                                         <td>兑换时间段：</td>
                                         <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
+                                            <div class="input-group">
+                                            <input id="date-star" class="flatpickr form-control input-sm" placeholder="开始时间" data-enable-time=true data-allow-input=true data-time_24hr=true>
+                                            <input id="date-end" class="flatpickr form-control input-sm"  placeholder="结束时间" data-enable-time=true data-allow-input=true data-time_24hr=true>
+                                            </div>
                                         </td>
                                     </tr>
                                 </table>
@@ -233,9 +238,13 @@
     <script src="js/checkbix.min.js"></script>
     <script src="js/tableSort.js"></script>
     <script src="js/nomoJS.js"></script>
+     <!--date-->
+    <script src="js/flatpickr.min.js"></script>
+    <script src="js/flatpickr.l10n.zh.js"></script>
     <script src="js/gimi.js"></script>
     <script>
-
+        $('#date-star').flatpickr();
+        $('#date-end').flatpickr();
     </script>
 </body>
 
