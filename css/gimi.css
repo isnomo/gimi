@@ -56,6 +56,7 @@ hr {
     padding: 5px 18px;
     font-size: 13px;
     transition: all .2s ease;
+    margin-left: 5px;
 }
 .btn-sm{
     padding: 5px 10px;
@@ -205,7 +206,19 @@ input[type=checkbox].checkbix[data-color=purple]:checked+label>span {
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
     color: #FFBD02;
     background-color: #1F1F1F;
+    /*border-left: 4px solid #FFBD02;*/
+}
+nav-pills > li.active .nav-line, .nav-pills > li.active .nav-line, .nav-pills > li.active .nav-line,.custom-nav > li.nav-active .nav-line{
+    left: 0;
+}
+
+.nav-line{
+    height: 50px;
     border-left: 4px solid #FFBD02;
+    position: absolute;
+    left: -4px;
+    z-index: 10;
+    transition: all .3s ease;
 }
 
 .nav-pills > li > a > span{
@@ -241,7 +254,7 @@ input[type=checkbox].checkbix[data-color=purple]:checked+label>span {
     background-color: #1F1F1F;
     background-image: url(../images/minus.png);
     color: #FFBD02;
-    border-left: 4px solid #FFBD02;
+    /*border-left: 4px solid #FFBD02;*/
 
 }
 
