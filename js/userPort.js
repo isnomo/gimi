@@ -84,7 +84,7 @@
 
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert("上传失败，请检查网络后重试");
+                alert("页面加载失败，请检查网络后重试");
             }
         });
     }
@@ -94,7 +94,6 @@
     $('.page-btn').on('click','.btn',function(){
         var toNum = $(this).html();
         var dNum =  parseInt($('.page-btn .active').html());
-        console.log(dNum);
         if(toNum == '上一页'){
             pageAjax(dNum - 1);
         }else if(toNum == '下一页'){
@@ -103,5 +102,75 @@
             pageAjax(toNum);
         }
     });
+
+    function checkbox(){
+        var checkeds = [];
+        $("input[type=checkbox].checkbix[data-color=yellow]:checked").each(function () { 
+            var checkedId = $(this).attr('id').split('-')[0].slice(4);
+            checkeds.push(checkedId);
+        }) 
+        // console.log(checkeds);
+        return checkeds;
+    }
+    // 禁用
+    $('#userDisable').on('click',function(){
+        var checkeds = checkbox();
+        $.ajax({
+            type: "POST",
+            url: "http://gimi321.com/admin.php/user_userforbidden",
+            data: { 'id': checkeds },
+            dataType: 'JSON',
+            cache: false,
+            success: function (response) {
+                //  console.log('已修改为禁用');
+                 location.reload();
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("设置失败，请检查网络后重试。");
+            }
+        });
+    });
+    // 启用
+    $('#userEnabled').on('click',function(){
+        var checkeds = checkbox();
+        $.ajax({
+            type: "POST",
+            url: "http://gimi321.com/admin.php/user_userstart",
+            data: { 'id': checkeds },
+            dataType: 'JSON',
+            cache: false,
+            success: function (response) {
+                //  console.log('已修改为禁用');
+                 location.reload();
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("设置失败，请检查网络后重试。");
+            }
+        });
+    });
+    // 删除
+    $('#userDelete').on('click',function(){
+        var checkeds = checkbox();
+        $.ajax({
+            type: "POST",
+            url: "http://gimi321.com/user_userdelete",
+            data: { 'id': checkeds },
+            dataType: 'JSON',
+            cache: false,
+            success: function (response) {
+                //  console.log('已修改为禁用');
+                 location.reload();
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert('删除失败！请检查网络后重试。');
+            }
+        });
+    });
+
+
+
+
+
+
 
 })();
