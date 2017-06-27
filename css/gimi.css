@@ -175,6 +175,9 @@ input[type=checkbox].checkbix[data-color=purple]:checked+label>span {
     border-color: #ffb866;
     color: #fff;
 }
+.input-group-addon, .input-group-btn{
+    width: 0;
+}
 
 /*============================================================
                         以上基础样式
@@ -817,7 +820,9 @@ input[type=checkbox].checkbix[data-color=purple]:checked+label>span {
 }
 .shop-content .shop-pic{
     position: relative;
-    
+    background-color: #f9f9f9;
+    padding: 30px 0;
+    text-align: center;
 }
 .shop-content .shop-pic .shop-name{
     position: absolute;
@@ -847,7 +852,8 @@ input[type=checkbox].checkbix[data-color=purple]:checked+label>span {
     color: #B9B9B9;
 }
 .shop-content .shop-pic img{
-    width: 100%;
+    /*width: 100%;*/
+    margin-bottom: 20px;
 }
 .shop-content .shop-text{
     margin-top: 10px;
