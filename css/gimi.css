@@ -51,6 +51,9 @@ hr {
 .text-purple{
     color: #8A65E1!important;
 }
+textarea {
+    resize: none;
+}
 /*btn 按钮*/
 .btn{
     padding: 5px 18px;
@@ -726,6 +729,14 @@ nav-pills > li.active .nav-line, .nav-pills > li.active .nav-line, .nav-pills > 
 }
 .edit-table tr td.gray-text{
     color: #999;
+}
+.edit-table tr td .form-group {
+    margin-bottom: 0;
+}
+.edit-table tr td #upImg{
+    display: none;
+    color: #a94442;
+    font-size: 80%;
 }
 .edit-btn{
     width: 120px;

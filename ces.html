@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit" />
+    <link rel="icon" href="">
+    <title>用户详情 -- Gimi叽咪</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css">
+
+
+</head>
+
+<body>
+    <form id="defaultForm" method="post" class="form-horizontal" action="target.php"> 
+    <div class="form-group"> 
+        <input type="text" class="form-control" name="username" /> 
+    </div> 
+ 
+    
+ 
+    <div class="form-group"> 
+        <div class="col-lg-9 col-lg-offset-3"> 
+            <button type="submit" class="btn btn-primary" name="signup" value="Sign up">提交</button> 
+            <button type="button" class="btn btn-info" id="validateBtn">自动验证</button> 
+            <button type="button" class="btn btn-info" id="resetBtn">重置表单</button> 
+        </div> 
+    </div> 
+</form>
+
+
+
+
+    <!--JS-->
+    <script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/jquery-1.12.4.min.js"><\/script>')
+    </script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+
+    <script>
+
+        $('#defaultForm').bootstrapValidator({ 
+    message: 'This value is not valid', 
+    feedbackIcons: { 
+        valid: 'glyphicon glyphicon-ok', 
+        invalid: 'glyphicon glyphicon-remove', 
+        validating: 'glyphicon glyphicon-refresh' 
+    }, 
+    fields: { 
+        username: { 
+            message: 'The username is not valid', 
+            validators: { 
+                notEmpty: { 
+                    message: 'The username is required and cannot be empty' 
+                }, 
+                stringLength: { 
+                    min: 6, 
+                    max: 30, 
+                    message: 'The username must be more than 6 and less than 30 characters long' 
+                }, 
+                regexp: { 
+                    regexp: /^[a-zA-Z0-9_\.]+$/, 
+                    message: 'The username can only consist of alphabetical, number, dot and underscore' 
+                }, 
+                remote: { 
+                    url: 'remote.php', 
+                    message: 'The username is not available' 
+                }, 
+                different: { 
+                    field: 'password', 
+                    message: 'The username and password cannot be the same as each other' 
+                } 
+            } 
+        }
+    } 
+});
+    </script>
+</body>
+
+</html>

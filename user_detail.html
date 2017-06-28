@@ -11,6 +11,8 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css">
+    
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/checkbix.min.css">
@@ -131,33 +133,40 @@
                     </div>
                     <div class="tab-content">
                         <div id="tab1" class="tab-pane fade in active tab">
-                            <form action="">
+                            <form id="userEdit" enctype=”multipart/form-data”>
                                 <table class="table table-bordered edit-table">
                                     <tr>
                                         <td>用户名：</td>
                                         <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-sm" name="nickname" value="">
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>性别：</td>
                                         <td>
-                                            <label class="radio-inline">
-                                        <input type="radio" name="xb" id="inlineRadio1" value="option1"> 男
-                                    </label>
-                                            <label class="radio-inline">
-                                        <input type="radio" name="xb" id="inlineRadio2" value="option2"> 女
-                                    </label>
+                                            <div class="form-group">
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="sex" value="男"> 男
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="sex" value="女"> 女
+                                                </label>
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>头像：</td>
                                         <td>
-                                            <div class="img-list" id="title-img">
-                                                <div class="change-title">
-                                                    <input type="file">
+                                            <div class="form-group">
+                                                <div class="img-list" id="title-img">
+                                                    <div class="change-title">
+                                                        <input type="file">
+                                                    </div>
+                                                    <img src="images/img1.png" alt="">
                                                 </div>
-                                                <img src="images/img1.png" alt="">
+                                                <span id="upImg">请上传头像！</span>
                                             </div>
                                         </td>
                                     </tr>
@@ -168,60 +177,85 @@
                                     <tr>
                                         <td>生日：</td>
                                         <td>
-                                            <input id="date-birthday" class="flatpickr form-control input-sm" data-date-format="Y-m-d">
+                                            <div class="form-group">
+                                            <input id="date-birthday" name="birth" class="flatpickr form-control input-sm" data-date-format="Y-m-d">
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>所在地：</td>
                                         <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
+                                            <div class="form-group">
+                                            <input type="text" name="location" class="form-control input-sm" value="">
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
+                                        <td>个人简介：</td>
+                                        <td>
+                                            <div class="form-group">
+                                                <textarea class="form-control" name="intro" cols="20" rows="5"></textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!--<tr>
                                         <td>积分：</td>
                                         <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
+                                            <div class="form-group">
+                                                <input type="number" name="score_num" class="form-control input-sm" value="">
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>热度：</td>
                                         <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
+                                            <div class="form-group">
+                                                <input type="number" name="hot_num" class="form-control input-sm" value="">
+                                            </div>
                                         </td>
-                                    </tr>
-                                    <tr>
+                                    </tr>-->
+                                    <!--<tr>
                                         <td>账号：</td>
                                         <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
+                                            <input type="text" name="userId" class="form-control input-sm" value="">
                                         </td>
-                                    </tr>
+                                    </tr>-->
                                     <tr>
                                         <td>密码：</td>
                                         <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
+                                            <div class="form-group">
+                                            <input type="text" name="pwd" class="form-control input-sm" value="">
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>注册时间：</td>
                                         <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
+                                            <div class="form-group">
+                                                <input id="date-reg" name="register_time" class="flatpickr form-control input-sm" data-enable-time=true data-time_24hr=true>
+                                            </div>
+                                            <!--<input type="text" name="userReg" class="form-control input-sm"  value="">-->
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>手机号：</td>
                                         <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
+                                            <div class="form-group">
+                                                <input type="text" name="phone" class="form-control input-sm" value="">
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>状态：</td>
                                         <td>
-                                            <label class="radio-inline text-green">
-                                        <input type="radio" name="zt"  value="option1"> 正常
-                                    </label>
-                                            <label class="radio-inline text-red">
-                                        <input type="radio" name="zt"  value="option2"> 禁用
-                                    </label>
+                                            <div class="form-group">
+                                                <label class="radio-inline text-green">
+                                                    <input type="radio" name="state"  value="1"> 正常
+                                                </label>
+                                                <label class="radio-inline text-red">
+                                                    <input type="radio" name="state"  value="0"> 禁用
+                                                </label>
+                                            </div>
                                         </td>
                                     </tr>
                                 </table>
@@ -249,12 +283,18 @@
     <script src="js/checkbix.min.js"></script>
     <script src="js/tableSort.js"></script>
     <script src="js/nomoJS.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+    <script src="js/gimiValidation.js"></script>
     <!--date-->
     <script src="js/flatpickr.min.js"></script>
     <script src="js/flatpickr.l10n.zh.js"></script>
+    <script src="js/userEditPort.js"></script>
     <script src="js/gimi.js"></script>
     <script>
         $('#date-birthday').flatpickr();
+        $('#date-reg').flatpickr();
+        
+        
     </script>
 </body>
 

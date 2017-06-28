@@ -47,8 +47,8 @@
                                 <td class="text-blue">${userNum.publish_num}</td>
                                 <td class="text-blue">${userNum.comment_num}</td>
                                 <td class="text-blue">${userNum.order_num}</td>
-                                ${userInfo.is_state == 1 ? '<td class="text-green">正常</td>' : '<td class="text-yellow">禁用</td>'}
-                                <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
+                                ${userInfo.is_state == 1 ? '<td class="text-status text-green">正常</td>' : '<td class="text-status text-yellow">禁用</td>'}
+                                <td><a href="user_detail.html?type=${userInfo.id}" class="user-edit"><i class="fa fa-edit"></i></a></td>
                             </tr>`;
                 }
                 $('#tableSort>tbody').html(userHtml);
@@ -84,7 +84,8 @@
 
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert("页面加载失败，请检查网络后重试");
+                // alert("页面加载失败，请检查网络后重试");
+                console.log("页面加载失败，请检查网络后重试");
             }
         });
     }
@@ -107,14 +108,19 @@
         var checkeds = [];
         $("input[type=checkbox].checkbix[data-color=yellow]:checked").each(function () { 
             var checkedId = $(this).attr('id').split('-')[0].slice(4);
-            checkeds.push(checkedId);
+            if(checkedId!='All'){
+                checkeds.push(checkedId);
+            }
         }) 
-        // console.log(checkeds);
         return checkeds;
     }
     // 禁用
     $('#userDisable').on('click',function(){
         var checkeds = checkbox();
+        if(checkeds==''){
+            alert("请选择要设置的选项！");
+            return false;
+        }
         $.ajax({
             type: "POST",
             url: "http://gimi321.com/admin.php/user_userforbidden",
@@ -122,8 +128,12 @@
             dataType: 'JSON',
             cache: false,
             success: function (response) {
-                //  console.log('已修改为禁用');
-                 location.reload();
+                for(var i = 0; i < checkeds.length; i++){
+                    var check = 'user'+checkeds[i]+'-mycheckbox';
+                    $("#"+check).parent('td').siblings('.text-status').removeClass('text-green').addClass('text-yellow').html('禁用');
+                    $("#"+check).attr('checked',false);
+                }
+                 alert('设置成功！');
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 alert("设置失败，请检查网络后重试。");
@@ -133,6 +143,10 @@
     // 启用
     $('#userEnabled').on('click',function(){
         var checkeds = checkbox();
+        if(checkeds==''){
+            alert("请选择要设置的选项！");
+            return false;
+        }
         $.ajax({
             type: "POST",
             url: "http://gimi321.com/admin.php/user_userstart",
@@ -140,8 +154,13 @@
             dataType: 'JSON',
             cache: false,
             success: function (response) {
-                //  console.log('已修改为禁用');
-                 location.reload();
+                for(var i = 0; i < checkeds.length; i++){
+                    var check = 'user'+checkeds[i]+'-mycheckbox';
+                    $("#"+check).parent('td').siblings('.text-status').removeClass('text-yellow').addClass('text-green').html('正常');
+                    $("#"+check).attr('checked',false);
+                }
+                alert('设置成功！');
+                //  location.reload();
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 alert("设置失败，请检查网络后重试。");
@@ -151,6 +170,10 @@
     // 删除
     $('#userDelete').on('click',function(){
         var checkeds = checkbox();
+        if(checkeds==''){
+            alert("请选择要设置的选项！");
+            return false;
+        }
         $.ajax({
             type: "POST",
             url: "http://gimi321.com/user_userdelete",
@@ -167,7 +190,7 @@
         });
     });
 
-
+    
 
 
 

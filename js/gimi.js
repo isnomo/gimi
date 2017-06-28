@@ -62,43 +62,7 @@
             }
         }
     }
-    // 缩略图上传
-    $('#title-img>.change-title>input').change(function(e){
-        // var file = this.files[0];
-        var file = this.files[0];
-        var imgPath = $(this).val();
-        if (imgPath == "") {
-            return false;
-        }else{
-            var imgUrl = window.URL.createObjectURL(this.files[0]);
-        }
-        if(!/image\/\w+/.test(file.type)){
-            alert("请确保文件为图像类型");
-            return false;
-        }
-        if(file.size > 2000000){
-            alert('图片过大,不得超过2M！');
-            return false;
-        }
-        $('#title-img>img').attr({'src':imgUrl,'width':'109px;','height':'109px;'});
-        //$.ajax({
-            //    type: "POST",
-            //    url: "",
-            //    data: {},
-            //    cache: false,
-            //    success: function(data) {
-            //        //alert("上传成功");
-            //        var div_html=`<div class="img-con" style="height:${my_publish.updataImgHt}">
-            //                  <div><img src="${imgUrl}" alt=""/></div>
-            //                <span class="del-img"></span>
-            //            </div>`;
-            //        $(".add-img-btn").before(div_html);
-            //    },
-            //    error: function(XMLHttpRequest, textStatus, errorThrown) {
-            //        alert("上传失败，请检查网络后重试");
-            //    }
-            //});
-    });
+    
     // 图片添加
     $('#imgs-add>input').change(function(e){
         var file = this.files[0];
@@ -198,6 +162,9 @@
     TableSort();
     // 时间
     format(new Date());
+
+    // 验证
+    // validator();
     //    调整主要内容高度
     //    function mainContentHeightAdjust() {
     //       // Adjust main content height
