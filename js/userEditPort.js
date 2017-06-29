@@ -4,9 +4,10 @@
     $.getUrlParam = function (name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象 
         var r = window.location.search.substr(1).match(reg);    //匹配目标参数
-        if (r != null) return unescape(r[2]); return null;      //返回参数值
+        if (r != null) return decodeURI(r[2]); return null;      //返回参数值
     };
     //得到url参数
+    var urltype = $.getUrlParam('type');
     var urltype = $.getUrlParam('type');
     console.log(urltype);
     if (urltype == 'add') {
@@ -16,6 +17,7 @@
         // 缩略图上传
         var file,imgPath,imgUrl;
         $('#title-img>.change-title>input').change(function (e) {
+
             file = this.files[0];
             imgPath = $(this).val();
 
@@ -33,7 +35,7 @@
                 alert('图片过大,不得超过2M！');
                 return false;
             }
-            console.log(file);
+            // console.log(file);
             $('#title-img>img').attr({ 'src': imgUrl, 'width': '109px;', 'height': '109px;' });
             $('#userEdit button[type=submit]').attr('disabled', false);
             $('#title-img').siblings('span').hide();
@@ -43,7 +45,8 @@
         $('#userEdit button[type=submit]').click(function (e) {
             // 阻止表单提交
             e.preventDefault();
-
+            $('#userEdit').bootstrapValidator('validate');
+            // $('#userEdit').data("bootstrapValidator").isValid();
             // 判断是否传图
             var noImg = 'images/img1.png';
             if ($('#title-img img').attr('src') == noImg) {
@@ -51,51 +54,125 @@
                 $('#title-img').siblings('span').show();
                 return false;
             }
-            // 获得表单实例
-            // var dataJson = $("#userEdit").serializeArray();
-            // dataJson.push({
-            //     'name':'icon_link',
-            //     'value':file
-            // });
-
-
-           
-
-            var url = "http://gimi321.com/admin.php/user_adduser"; // 接收上传文件的后台地址
-            // FormData 对象
-            var userForm = document.getElementById('userEdit');
+            
+            var userForm = $('#userEdit');
             var form = new FormData(userForm);
             form.append("icon_link", file); // 文件对象
-            // console.log(form);
 
-
-            // XMLHttpRequest 对象
-            var xhr = new XMLHttpRequest();
-            xhr.open("post", url, true);
-            xhr.setRequestHeader("Content-Type", "multipart/form-data");
-            xhr.send(form);
-            xhr.onreadystatechange = function (data) {
-                if (xhr.readyState == 4) {
-                    if (xhr.status == 200) {
-                        alert("上传成功");
-
-                    } else {
-                        alert("请检查网络重新上传");
-
-                    }
+            $.ajax({
+                url: "http://gimi321.com/admin.php/user_adduser",
+                type: "POST",
+                data: form,
+                processData: false,
+                contentType: false,
+                success: function (res) {
+                    // document.getElementById("response").innerHTML = res; 
+                    alert('添加成功！');
+                    window.history.back(-1); 
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("设置失败，请检查网络后重试。");
                 }
-            };
-            xhr.onload = function () {
-                // 
-            };
-            
+                
+            });
 
+        });
+    }else{
+        var user = {
+            'id': urltype,
+            'icon_link':$.getUrlParam('icon_link'),
+            'nickname':$.getUrlParam('nickname'),
+            'sex':$.getUrlParam('sex'),
+            'birth':$.getUrlParam('birth'),
+            'intro':$.getUrlParam('intro'),
+            'location':$.getUrlParam('location'),
+            'score_num':$.getUrlParam('score_num'),
+            'hot_num':$.getUrlParam('hot_num'),
+            'phone':$.getUrlParam('phone'),
+            'register_time':$.getUrlParam('add_time'),
+            'publish_num':$.getUrlParam('publish_num'),
+            'comment_num':$.getUrlParam('comment_num'),
+            'order_num':$.getUrlParam('order_num'),
+            'state':$.getUrlParam('is_state')
+        }
+
+        for(var key in user){
+            var select = '#userEdit [name='+key+']';
+            if(key == 'icon_link'){
+                $('#title-img img').attr('src',user[key]);
+            }else if($(select).attr('type')!='radio'){
+                $(select).val(user[key]);
+            }else{
+                if(key == 'sex'){
+                    $('#sex'+user[key]).attr('checked','checked');
+                }
+                if(key == 'state'){
+                    $('#state'+user[key]).attr('checked','checked');
+                }
+                
+                
+            }
+
+            
+        }
+        validator();
+        var file=false,imgPath,imgUrl;
+        $('#title-img>.change-title>input').change(function (e) {
+
+            file = this.files[0];
+            imgPath = $(this).val();
+
+            if (imgPath == "") {
+                return false;
+            } else {
+                imgUrl = window.URL.createObjectURL(this.files[0]);
+            }
+
+            if (!/image\/\w+/.test(file.type)) {
+                alert("请确保文件为图像类型");
+                return false;
+            }
+            if (file.size > 2000000) {
+                alert('图片过大,不得超过2M！');
+                return false;
+            }
+            // console.log(file);
+            $('#title-img>img').attr({ 'src': imgUrl, 'width': '109px;', 'height': '109px;' });
+            $('#userEdit button[type=submit]').attr('disabled', false);
+            $('#title-img').siblings('span').hide();
+        });
+        $('#userEdit button[type=submit]').click(function (e) {
+            // 阻止表单提交
+            e.preventDefault();
+            $('#userEdit').bootstrapValidator('validate');
+            // $('#userEdit').data("bootstrapValidator").isValid();
+            // 判断是否传图
+            
+            var userForm = $('#userEdit');
+            var form = new FormData(userForm);
+            if(file!=false){
+                form.append("icon_link", file); // 文件对象
+            }
+            
+        
+            $.ajax({
+                url: "http://gimi321.com/admin.php/user_edituser",
+                type: "POST",
+                data: form,
+                processData: false,
+                contentType: false,
+                success: function (res) {
+                    // document.getElementById("response").innerHTML = res; 
+                    alert('添加成功！');
+                    window.history.back(-1); 
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("设置失败，请检查网络后重试。");
+                }
+                
+            });
 
         });
     }
-
-
-
-
 
 })();

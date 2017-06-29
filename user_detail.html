@@ -133,7 +133,7 @@
                     </div>
                     <div class="tab-content">
                         <div id="tab1" class="tab-pane fade in active tab">
-                            <form id="userEdit" enctype=”multipart/form-data”>
+                            <form id="userEdit" enctype=”multipart/form-data” >
                                 <table class="table table-bordered edit-table">
                                     <tr>
                                         <td>用户名：</td>
@@ -148,10 +148,10 @@
                                         <td>
                                             <div class="form-group">
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="sex" value="男"> 男
+                                                    <input type="radio" id="sex1" name="sex" value="1"> 男
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="sex" value="女"> 女
+                                                    <input type="radio" id="sex0" name="sex" value="0"> 女
                                                 </label>
                                             </div>
                                         </td>
@@ -162,7 +162,7 @@
                                             <div class="form-group">
                                                 <div class="img-list" id="title-img">
                                                     <div class="change-title">
-                                                        <input type="file">
+                                                        <input type="file" class="" multiple >
                                                     </div>
                                                     <img src="images/img1.png" alt="">
                                                 </div>
@@ -198,7 +198,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <!--<tr>
+                                    <tr>
                                         <td>积分：</td>
                                         <td>
                                             <div class="form-group">
@@ -213,7 +213,7 @@
                                                 <input type="number" name="hot_num" class="form-control input-sm" value="">
                                             </div>
                                         </td>
-                                    </tr>-->
+                                    </tr>
                                     <!--<tr>
                                         <td>账号：</td>
                                         <td>
@@ -232,9 +232,8 @@
                                         <td>注册时间：</td>
                                         <td>
                                             <div class="form-group">
-                                                <input id="date-reg" name="register_time" class="flatpickr form-control input-sm" data-enable-time=true data-time_24hr=true>
+                                                <input id="date-reg" name="register_time" data-enable-time=true  data-time_24hr=true class="flatpickr form-control input-sm">
                                             </div>
-                                            <!--<input type="text" name="userReg" class="form-control input-sm"  value="">-->
                                         </td>
                                     </tr>
                                     <tr>
@@ -250,10 +249,10 @@
                                         <td>
                                             <div class="form-group">
                                                 <label class="radio-inline text-green">
-                                                    <input type="radio" name="state"  value="1"> 正常
+                                                    <input type="radio" id="state1" name="state"  value="1" > 正常
                                                 </label>
                                                 <label class="radio-inline text-red">
-                                                    <input type="radio" name="state"  value="0"> 禁用
+                                                    <input type="radio" id="state0" name="state"  value="0"> 禁用
                                                 </label>
                                             </div>
                                         </td>

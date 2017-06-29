@@ -48,9 +48,10 @@
                                 <td class="text-blue">${userNum.comment_num}</td>
                                 <td class="text-blue">${userNum.order_num}</td>
                                 ${userInfo.is_state == 1 ? '<td class="text-status text-green">正常</td>' : '<td class="text-status text-yellow">禁用</td>'}
-                                <td><a href="user_detail.html?type=${userInfo.id}" class="user-edit"><i class="fa fa-edit"></i></a></td>
+                                <td><a href="user_detail.html?type=${userInfo.id}&icon_link=${userInfo.icon_link}&nickname=${userInfo.nickname}&sex=${userInfo.sex}&birth=${birth}&intro=${userInfo.intro}&location=${userInfo.location}&score_num=${userNum.score_num}&hot_num=${userNum.hot_num}&phone=${userInfo.phone}&add_time=${userInfo.add_time}&publish_num=${userNum.publish_num}&comment_num=${userNum.comment_num}&order_num=${userNum.order_num}&is_state=${userInfo.is_state}" class="user-edit"><i class="fa fa-edit"></i></a></td>
                             </tr>`;
                 }
+                // <td><a href="user_detail.html?type=${userInfo.id}&userImg=${userInfo.icon_link}&userName=${userInfo.nickname}&userSex=${userInfo.sex}&userBirth=${birth}&userIntro=${userInfo.intro}&userLocation=${userInfo.location}" class="user-edit"><i class="fa fa-edit"></i></a></td>
                 $('#tableSort>tbody').html(userHtml);
                 TableSort();
 
@@ -80,7 +81,6 @@
                 $('#page-all').html(10);
                 $('#page-star').html((num-1)*9+1);
                 $('#page-end').html((num-1)*9+userList.length);
-
 
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -174,26 +174,30 @@
             alert("请选择要设置的选项！");
             return false;
         }
-        $.ajax({
-            type: "POST",
-            url: "http://gimi321.com/user_userdelete",
-            data: { 'id': checkeds },
-            dataType: 'JSON',
-            cache: false,
-            success: function (response) {
-                //  console.log('已修改为禁用');
-                 location.reload();
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert('删除失败！请检查网络后重试。');
+        if(confirm('确定删除该用户？')){
+            $.ajax({
+                type: "POST",
+                url: "http://gimi321.com/admin.php/user_userdelete",
+                data: { 'id': checkeds },
+                dataType: 'JSON',
+                cache: false,
+                success: function (response) {
+                    //  console.log('已修改为禁用');
+                    alert('删除成功');
+                    location.reload();
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert('删除失败！请检查网络后重试。');
+                }
+            });
+        }else{
+            for(var i = 0; i < checkeds.length; i++){
+                    var check = 'user'+checkeds[i]+'-mycheckbox';
+                    $("#"+check).attr('checked',false);
             }
-        });
+            return false;
+        }
     });
-
-    
-
-
-
 
 
 })();

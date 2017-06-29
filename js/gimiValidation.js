@@ -18,13 +18,6 @@ var validator = function(){
                     }
                 }
             },
-            pwd: {
-                validators: {
-                    notEmpty: {
-                        message: '密码不能为空！'
-                    }
-                }
-            },
             state: {
                 validators: {
                     notEmpty: {

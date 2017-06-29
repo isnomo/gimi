@@ -656,6 +656,7 @@ nav-pills > li.active .nav-line, .nav-pills > li.active .nav-line, .nav-pills > 
 .gimi-table  > tbody > tr > td:nth-child(3) > img{
     max-width: 30px;
     max-height: 30px;
+    border-radius: 50%;
 }
 .gimi-table  > thead > tr > th.table-sort{
     cursor: pointer;
@@ -759,6 +760,8 @@ nav-pills > li.active .nav-line, .nav-pills > li.active .nav-line, .nav-pills > 
 }
 .edit-table .img-list img{
     display: inline-block;
+    width: 109px;
+    height: 109px;
 }
 .edit-table .img-list .img-cover:hover > span{
     display: inline-block;
