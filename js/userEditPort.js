@@ -8,7 +8,6 @@
     };
     //得到url参数
     var urltype = $.getUrlParam('type');
-    var urltype = $.getUrlParam('type');
     console.log(urltype);
     if (urltype == 'add') {
         console.log('添加用户');
@@ -103,8 +102,12 @@
             }else if($(select).attr('type')!='radio'){
                 $(select).val(user[key]);
             }else{
-                if(key == 'sex'){
-                    $('#sex'+user[key]).attr('checked','checked');
+               if(key == 'sex'){
+                    if(user[key]=='男'){
+                        $('#sex1').attr('checked','checked');
+                    }else if(user[key]=='女'){
+                        $('#sex0').attr('checked','checked');
+                    }
                 }
                 if(key == 'state'){
                     $('#state'+user[key]).attr('checked','checked');

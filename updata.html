@@ -58,7 +58,7 @@
             <input type="text" name="pwd" placeholder="pwd">
             <input type="text" name="register_time" placeholder="register_time">
             <input type="text" name="state" placeholder="1-0">
-            <input type="file" name="images" id="images" multiple />
+            <input type="file" id="images" multiple />
             <button type="submit" id="btn">Upload Files!</button>
         </form>
 
@@ -123,6 +123,7 @@
                             contentType: false,
                             success: function (res) {
                                 document.getElementById("response").innerHTML = res;
+                                console.log('上传成功');
                             },
                             error: function (XMLHttpRequest, textStatus, errorThrown) {
                                 alert("设置失败，请检查网络后重试。");

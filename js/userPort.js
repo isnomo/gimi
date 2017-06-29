@@ -48,7 +48,7 @@
                                 <td class="text-blue">${userNum.comment_num}</td>
                                 <td class="text-blue">${userNum.order_num}</td>
                                 ${userInfo.is_state == 1 ? '<td class="text-status text-green">正常</td>' : '<td class="text-status text-yellow">禁用</td>'}
-                                <td><a href="user_detail.html?type=${userInfo.id}&icon_link=${userInfo.icon_link}&nickname=${userInfo.nickname}&sex=${userInfo.sex}&birth=${birth}&intro=${userInfo.intro}&location=${userInfo.location}&score_num=${userNum.score_num}&hot_num=${userNum.hot_num}&phone=${userInfo.phone}&add_time=${userInfo.add_time}&publish_num=${userNum.publish_num}&comment_num=${userNum.comment_num}&order_num=${userNum.order_num}&is_state=${userInfo.is_state}" class="user-edit"><i class="fa fa-edit"></i></a></td>
+                                <td><a href="user_detail.html?type=${userInfo.id}&icon_link=${userInfo.icon_link}&nickname=${userInfo.nickname}&sex=${userInfo.sex == 0 ? '女' : '男'}&birth=${birth}&intro=${userInfo.intro}&location=${userInfo.location}&score_num=${userNum.score_num}&hot_num=${userNum.hot_num}&phone=${userInfo.phone}&add_time=${userInfo.add_time}&publish_num=${userNum.publish_num}&comment_num=${userNum.comment_num}&order_num=${userNum.order_num}&is_state=${userInfo.is_state}" class="user-edit"><i class="fa fa-edit"></i></a></td>
                             </tr>`;
                 }
                 // <td><a href="user_detail.html?type=${userInfo.id}&userImg=${userInfo.icon_link}&userName=${userInfo.nickname}&userSex=${userInfo.sex}&userBirth=${birth}&userIntro=${userInfo.intro}&userLocation=${userInfo.location}" class="user-edit"><i class="fa fa-edit"></i></a></td>
