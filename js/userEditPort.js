@@ -10,7 +10,6 @@
     var urltype = $.getUrlParam('type');
     console.log(urltype);
     if (urltype == 'add') {
-        console.log('添加用户');
         // 启用表单验证
         validator();
         // 缩略图上传
@@ -54,8 +53,14 @@
                 return false;
             }
             
-            var userForm = $('#userEdit');
-            var form = new FormData(userForm);
+            var form = new FormData();
+            $('#userEdit [name]').each(function(){
+                if($(this).attr('type')!='radio'){
+                    form.append($(this).attr('name'), $(this).val()); 
+                }else if($(this).is(":checked")){
+                    form.append($(this).attr('name'), $(this).val());
+                }
+            });
             form.append("icon_link", file); // 文件对象
 
             $.ajax({
@@ -65,9 +70,8 @@
                 processData: false,
                 contentType: false,
                 success: function (res) {
-                    // document.getElementById("response").innerHTML = res; 
                     alert('添加成功！');
-                    window.history.back(-1); 
+                    // window.history.back(-1); 
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     alert("设置失败，请检查网络后重试。");
@@ -151,8 +155,14 @@
             // $('#userEdit').data("bootstrapValidator").isValid();
             // 判断是否传图
             
-            var userForm = $('#userEdit');
-            var form = new FormData(userForm);
+            var form = new FormData();
+            $('#userEdit [name]').each(function(){
+                if($(this).attr('type')!='radio'){
+                    form.append($(this).attr('name'), $(this).val()); 
+                }else if($(this).is(":checked")){
+                    form.append($(this).attr('name'), $(this).val());
+                }
+            });
             if(file!=false){
                 form.append("icon_link", file); // 文件对象
             }
