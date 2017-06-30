@@ -166,6 +166,7 @@
             if(file!=false){
                 form.append("icon_link", file); // 文件对象
             }
+            form.append("id", urltype);
             
         
             $.ajax({
@@ -176,7 +177,7 @@
                 contentType: false,
                 success: function (res) {
                     // document.getElementById("response").innerHTML = res; 
-                    alert('添加成功！');
+                    alert('修改成功！');
                     window.history.back(-1); 
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
