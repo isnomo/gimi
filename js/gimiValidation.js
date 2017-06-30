@@ -66,5 +66,17 @@ var validator = function(){
 
         }
     });
+     $('#tagEdit').bootstrapValidator({
+        message: '输入的内容无效',
+        fields: {
+            tag: {
+                validators: {
+                    notEmpty: {
+                        message: '标签名不能为空！'
+                    }
+                }
+            }
 
+        }
+     });
 }

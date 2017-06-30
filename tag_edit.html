@@ -127,28 +127,30 @@
                             </ul>
                         </div>
                     </div>
-                    <form action="">
+                    <form id='tagEdit'>
                         <div class="tab-content">
                             <div id="tab1" class="tab-pane fade in active tab">
                                 <table class="table table-bordered edit-table">
-                                    <tr>
+                                    <!--<tr>
                                         <td>序号：</td>
                                         <td>
                                             <input type="text" class="form-control input-sm" name="" value="">
                                         </td>
-                                    </tr>
+                                    </tr>-->
                                     <tr>
                                         <td>标签名：</td>
                                         <td>
-                                            <input type="text" class="form-control input-sm" name="" value="">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-sm" name="tag" value="">
+                                            </div>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <!--<tr>
                                         <td>别名：</td>
                                         <td>
                                             <input type="text" class="form-control input-sm" name="" value="">
                                         </td>
-                                    </tr>
+                                    </tr>-->
                                 </table>
                             </div>
 
@@ -175,7 +177,11 @@
     <script src="js/checkbix.min.js"></script>
     <script src="js/tableSort.js"></script>
     <script src="js/nomoJS.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+    <script src="js/gimiValidation.js"></script>
+
     <script src="js/gimi.js"></script>
+    <script src="js/tagEditPort.js"></script>
     <script>
 
     </script>
