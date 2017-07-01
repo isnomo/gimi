@@ -119,12 +119,12 @@
                 <div class="content">
                     <div class="content-header">
                         <div class="content-btn">
-                            <a href="post_edit.html" class="btn btn-purple">过审</a>
-                            <a href="post_edit.html" class="btn btn-green">启用</a>
-                            <a href="post_edit.html" class="btn btn-yellow">禁用</a>
-                            <a href="post_edit.html" class="btn btn-red">删除</a>
+                            <button type="button" id="commentPass" class="btn btn-purple">过审</button>
+                            <button type="button" class="btn btn-green">启用</button>
+                            <button type="button" id="commentDisable" class="btn btn-yellow">禁用</button>
+                            <button type="button" id="commentDelete" class="btn btn-red">删除</button>
                         </div>
-                        <div class="content-search">
+                        <!--<div class="content-search">
                             <form class="">
                                 <select class="form-control inline-blok">
                                     <option value="all">全部</option>
@@ -139,7 +139,7 @@
                                     <i class="form-control-feedback fa fa-search" aria-hidden="true"></i>
                                 </div>
                             </form>
-                        </div>
+                        </div>-->
 
                     </div>
                     <table class="table gimi-table table-striped" id="tableSort">
@@ -156,7 +156,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <!--<tr>
                                 <td>
                                     <input id="comment1-mycheckbox" name="comment-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
                                 </td>
@@ -166,95 +166,8 @@
                                 <td class="table-text">巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</td>
                                 <td class="text-green">可见</td>
 
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="comment2-mycheckbox" name="comment-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td class="table-text text-blue">耿直BOY的逆袭，时代交话费耿直BOY的逆袭，时代交话费</td>
-                                <td class="text-blue">Gimi</td>
-                                <td>1990-02-01 12:33</td>
-                                <td class="table-text">巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</td>
-                                <td class="text-yellow">待审核</td>
-
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="comment3-mycheckbox" name="comment-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td class="table-text text-blue">耿直BOY的逆袭，时代交话费耿直BOY的逆袭，时代交话费</td>
-                                <td class="text-blue">Gimi</td>
-                                <td>1990-02-01 12:33</td>
-                                <td class="table-text">巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</td>
-                                <td class="text-red">禁用</td>
-
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="comment4-mycheckbox" name="comment-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td class="table-text text-blue">耿直BOY的逆袭，时代交话费耿直BOY的逆袭，时代交话费</td>
-                                <td class="text-blue">Gimi</td>
-                                <td>1990-02-01 12:33</td>
-                                <td class="table-text">巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</td>
-                                <td class="text-green">可见</td>
-
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="comment5-mycheckbox" name="comment-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td class="table-text text-blue">耿直BOY的逆袭，时代交话费耿直BOY的逆袭，时代交话费</td>
-                                <td class="text-blue">Gimi</td>
-                                <td>1990-02-01 12:33</td>
-                                <td class="table-text">巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</td>
-                                <td class="text-yellow">待审核</td>
-
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="comment6-mycheckbox" name="comment-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td class="table-text text-blue">耿直BOY的逆袭，时代交话费耿直BOY的逆袭，时代交话费</td>
-                                <td class="text-blue">Gimi</td>
-                                <td>1990-02-01 12:33</td>
-                                <td class="table-text">巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</td>
-                                <td class="text-red">禁用</td>
-
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="comment7-mycheckbox" name="comment-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td class="table-text text-blue">耿直BOY的逆袭，时代交话费耿直BOY的逆袭，时代交话费</td>
-                                <td class="text-blue">Gimi</td>
-                                <td>1990-02-01 12:33</td>
-                                <td class="table-text">巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</td>
-                                <td class="text-green">可见</td>
-
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="comment8-mycheckbox" name="comment-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td class="table-text text-blue">耿直BOY的逆袭，时代交话费耿直BOY的逆袭，时代交话费</td>
-                                <td class="text-blue">Gimi</td>
-                                <td>1990-02-01 12:33</td>
-                                <td class="table-text">巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</td>
-                                <td class="text-yellow">待审核</td>
-
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="comment9-mycheckbox" name="comment-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td class="table-text text-blue">耿直BOY的逆袭，时代交话费耿直BOY的逆袭，时代交话费</td>
-                                <td class="text-blue">Gimi</td>
-                                <td>1990-02-01 12:33</td>
-                                <td class="table-text">巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</td>
-                                <td class="text-red">禁用</td>
-
-                            </tr>
+                            </tr>-->
+                            
                         </tbody>
                     </table>
                     <div class="content-footer">
@@ -262,12 +175,12 @@
                             当前显示 <span id="page-star">1</span> 到 <span id="page-end">9</span> 条，共 <span id="page-all">12</span>                            条记录。
                         </div>
                         <div class="page-btn">
-                            <a href="" class="btn btn-yellow">上一页</a>
+                            <!--<a href="" class="btn btn-yellow">上一页</a>
                             <a href="" class="btn btn-yellow active">1</a>
                             <a href="" class="btn btn-yellow">2</a>
                             <a href="" class="btn btn-yellow">3</a>
                             <a href="" class="btn btn-yellow">4</a>
-                            <a href="" class="btn btn-yellow">下一页</a>
+                            <a href="" class="btn btn-yellow">下一页</a>-->
                         </div>
                     </div>
 
@@ -290,6 +203,7 @@
     <script src="js/tableSort.js"></script>
     <script src="js/nomoJS.js"></script>
     <script src="js/gimi.js"></script>
+    <script src="js/commentPort.js"></script>
     <script>
 
     </script>

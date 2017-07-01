@@ -21,14 +21,19 @@
                     switch(orderInfo.status){
                             case 0:
                             orderStatus='<td class="text-purple">订单已取消</td>';
+                            break;
                             case 1:
                             orderStatus='<td class="text-blue">订单兑换成功</td>';
+                            break;
                             case 2:
                             orderStatus='<td class="text-yellow">待发货</td>'; 
+                            break;
                             case 3:
                             orderStatus='<td class="text-green">已发货</td>';
+                            break;
                             case 4:
                             orderStatus='<td class="text-red">已关闭</td>';
+                            break;
                     }
 
                     orderHtml +=`<tr>
@@ -39,7 +44,7 @@
                                 <td class="text-blue">${orderInfo.order_id}</td>
                                 <td>${orderInfo.add_time}</td>
                                 <td>${orderInfo.user_id}</td>
-                                <td>${orderInfo.address.province}</td>
+                                <td>${orderInfo.address.province }</td>
                                 <td>${orderInfo.category_name}</td>
                                 <td>${orderInfo.express_id}</td>
                                 <td>${orderInfo.remark}</td>
