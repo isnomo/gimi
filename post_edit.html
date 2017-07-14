@@ -45,7 +45,7 @@
                         <a href=""><i class="wz-icon"></i> <span>文章管理</span></a>
                         <ul class="sub-menu-list">
                             <li class="active"><a href="post_control.html"> 文章管理</a>
-                                <div class="num-icon">500</div>
+                                <!-- <div class="num-icon">500</div> -->
                             </li>
                             <li><a href="comment_control.html"> 评论管理</a>
                                 <div class="num-icon">500</div>
@@ -131,8 +131,8 @@
                     </div>
                     <form action="">
                         <div class="tab-content">
-                            <div id="tab1" class="tab-pane fade in active tab">
-                                <table class="table table-bordered edit-table">
+                            <div id="tab1" class="tab-pane fade in active tab" >
+                                <table class="table table-bordered edit-table" >
                                     <tr>
                                         <td>文章标题：</td>
                                         <td>
@@ -181,7 +181,26 @@
                                     </tr>
                                     <tr>
                                         <td>正文：</td>
-                                        <td>安包</td>
+                                        <td>
+                                            <div class="img-list" id="imgs-list-content">
+                                                <div class="img-cover">
+                                                    <span></span>
+                                                    <img src="images/img1.png" alt="">
+                                                </div>
+                                                <div class="img-cover">
+                                                    <span></span>
+                                                    <img src="images/img2.png" alt="">
+                                                </div>
+                                                <div class="img-cover">
+                                                    <span></span>
+                                                    <img src="images/img3.png" alt="">
+                                                </div>
+                                                <div class="add-input" id="imgs-add-content">
+                                                    <input type="file">
+                                                </div>
+                                            </div>
+
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>标签：</td>
@@ -284,6 +303,7 @@
     <script src="js/tableSort.js"></script>
     <script src="js/nomoJS.js"></script>
     <script src="js/gimi.js"></script>
+    <script src="js/postEditPort.js"></script>
     <script>
 
     </script>

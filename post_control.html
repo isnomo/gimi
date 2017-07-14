@@ -38,20 +38,20 @@
                     <li>
                         <div class="nav-line"></div>
                         <a href="user_control.html"><i class="yh-icon"></i> <span>用户管理</span></a>
-                        <div class="num-icon">500</div>
+                        <div class="num-icon"></div>
                     </li>
                     <li class="menu-list nav-active">
                         <div class="nav-line"></div>
                         <a href=""><i class="wz-icon"></i> <span>文章管理</span></a>
                         <ul class="sub-menu-list">
                             <li class="active"><a href="post_control.html"> 文章管理</a>
-                                <div class="num-icon">500</div>
+                                <div class="num-icon"></div>
                             </li>
                             <li><a href="comment_control.html"> 评论管理</a>
-                                <div class="num-icon">500</div>
+                                <div class="num-icon"></div>
                             </li>
                             <li><a href="tag_control.html"> 标签管理</a>
-                                <div class="num-icon">500</div>
+                                <div class="num-icon"></div>
                             </li>
                         </ul>
                     </li>
@@ -60,31 +60,31 @@
                         <a href=""><i class="sp-icon"></i> <span>商品管理</span></a>
                         <ul class="sub-menu-list">
                             <li><a href="general_control.html"> 普通商品</a>
-                                <div class="num-icon">500</div>
+                                <div class="num-icon"></div>
                             </li>
                             <li><a href="int_control.html"> 积分商品</a>
-                                <div class="num-icon">500</div>
+                                <div class="num-icon"></div>
                             </li>
                             <li><a href="experience_control.html"> 线下体验</a>
-                                <div class="num-icon">500</div>
+                                <div class="num-icon"></div>
                             </li>
                             <li><a href="class_control.html"> 分类管理</a>
-                                <div class="num-icon">500</div>
+                                <div class="num-icon"></div>
                             </li>
                         </ul>
                     </li>
 
                     <li>
                         <div class="nav-line"></div><a href="order_control.html"><i class="dd-icon"></i> <span>订单管理</span></a>
-                        <div class="num-icon">500</div>
+                        <div class="num-icon"></div>
                     </li>
                     <li>
                         <div class="nav-line"></div><a href="push_control.html"><i class="xx-icon"></i> <span>消息推送</span></a>
-                        <div class="num-icon">500</div>
+                        <div class="num-icon"></div>
                     </li>
                     <li>
                         <div class="nav-line"></div><a href=""><i class="jt-icon"></i> <span>静态信息</span></a>
-                        <div class="num-icon">500</div>
+                        <div class="num-icon"></div>
                     </li>
                 </ul>
             </div>
@@ -121,21 +121,21 @@
                 <div class="content">
                     <div class="content-header">
                         <div class="content-btn">
-                            <a href="post_edit.html" class="btn btn-blue">添加</a>
-                            <a href="post_edit.html" class="btn btn-purple">过审</a>
-                            <a href="post_edit.html" class="btn btn-green">启用</a>
-                            <a href="post_edit.html" class="btn btn-yellow">禁用</a>
-                            <a href="post_edit.html" class="btn btn-red">删除</a>
+                            <a href="post_edit.html?type=add" class="btn btn-blue">添加</a>
+                            <button type="button"  id="postPass" class="btn btn-purple">过审</button>
+                            <button type="button"  id="postEnabled" class="btn btn-green">启用</button>
+                            <button type="button"  id="postDisable" class="btn btn-yellow">禁用</button>
+                            <button type="button"  id="postDelete" class="btn btn-red">删除</button>
                         </div>
                         <div class="content-search">
                             <form class="">
-                                <select class="form-control inline-blok">
+                                <!-- <select class="form-control inline-blok">
                                     <option value="all">全部</option>
                                     <option value="id">ID</option>
                                     <option value="name">用户名</option>
                                     <option value="account">帐号</option>
                                     <option value="phone">手机号</option>
-                                </select>
+                                </select> -->
                                 <div class="form-group has-feedback inline-blok">
                                     <label class="sr-only" for="search">搜索</label>
                                     <input class="form-control search-input" type="text" id="header-search" />
@@ -166,7 +166,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <!-- <tr>
                                 <td>
                                     <input id="post1-mycheckbox" name="post-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
                                 </td>
@@ -182,143 +182,8 @@
                                 <td>23</td>
                                 <td class="text-green">可见</td>
                                 <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="post2-mycheckbox" name="post-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td>0002</td>
-                                <td class="table-text">耿直BOY的逆袭，时代交话费耿直BOY的逆袭，时代交话费</td>
-                                <td class="text-blue">Gimi叽咪管理员</td>
-                                <td>美容/瘦身/护肤</td>
-                                <td>2003-02-01 11:11</td>
-                                <td>1654</td>
-                                <td class="text-blue">87</td>
-                                <td>99</td>
-                                <td class="text-blue">99</td>
-                                <td>123</td>
-                                <td class="text-yellow">待审核</td>
-                                <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="post3-mycheckbox" name="post-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td>0003</td>
-                                <td class="table-text">耿直BOY的逆袭，时代交话费耿直BOY的逆袭，时代交话费</td>
-                                <td class="text-blue">Gimi叽咪管理员</td>
-                                <td>美容/瘦身/护肤</td>
-                                <td>2017-11-11 11:11</td>
-                                <td>665</td>
-                                <td class="text-blue">422</td>
-                                <td>80</td>
-                                <td class="text-blue">80</td>
-                                <td>26</td>
-                                <td class="text-red">禁用</td>
-                                <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="post4-mycheckbox" name="post-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td>0004</td>
-                                <td class="table-text">耿直BOY的逆袭，时代交话费耿直BOY的逆袭，时代交话费</td>
-                                <td class="text-blue">Gimi叽咪管理员</td>
-                                <td>美容/瘦身/护肤</td>
-                                <td>1990-02-01 12:33</td>
-                                <td>411</td>
-                                <td class="text-blue">213</td>
-                                <td>18</td>
-                                <td class="text-blue">18</td>
-                                <td>23</td>
-                                <td class="text-green">可见</td>
-                                <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="post5-mycheckbox" name="post-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td>0005</td>
-                                <td class="table-text">耿直BOY的逆袭，时代交话费耿直BOY的逆袭，时代交话费</td>
-                                <td class="text-blue">Gimi叽咪管理员</td>
-                                <td>美容/瘦身/护肤</td>
-                                <td>2003-02-01 11:11</td>
-                                <td>1654</td>
-                                <td class="text-blue">87</td>
-                                <td>87</td>
-                                <td class="text-blue">99</td>
-                                <td>123</td>
-                                <td class="text-yellow">待审核</td>
-                                <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="post6-mycheckbox" name="post-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td>0006</td>
-                                <td class="table-text">耿直BOY的逆袭，时代交话费耿直BOY的逆袭，时代交话费</td>
-                                <td class="text-blue">Gimi叽咪管理员</td>
-                                <td>美容/瘦身/护肤</td>
-                                <td>2017-11-11 11:11</td>
-                                <td>665</td>
-                                <td class="text-blue">422</td>
-                                <td>422</td>
-                                <td class="text-blue">80</td>
-                                <td>26</td>
-                                <td class="text-red">禁用</td>
-                                <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="post7-mycheckbox" name="post-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td>0007</td>
-                                <td class="table-text">耿直BOY的逆袭，时代交话费耿直BOY的逆袭，时代交话费</td>
-                                <td class="text-blue">Gimi叽咪管理员</td>
-                                <td>美容/瘦身/护肤</td>
-                                <td>1990-02-01 12:33</td>
-                                <td>411</td>
-                                <td class="text-blue">213</td>
-                                <td>18</td>
-                                <td class="text-blue">18</td>
-                                <td>23</td>
-                                <td class="text-green">可见</td>
-                                <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="post8-mycheckbox" name="post-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td>0008</td>
-                                <td class="table-text">耿直BOY的逆袭，时代交话费耿直BOY的逆袭，时代交话费</td>
-                                <td class="text-blue">Gimi叽咪管理员</td>
-                                <td>美容/瘦身/护肤</td>
-                                <td>2003-02-01 11:11</td>
-                                <td>1654</td>
-                                <td class="text-blue">87</td>
-                                <td>87</td>
-                                <td class="text-blue">99</td>
-                                <td>123</td>
-                                <td class="text-yellow">待审核</td>
-                                <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input id="post9-mycheckbox" name="post-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                </td>
-                                <td>0009</td>
-                                <td class="table-text">耿直BOY的逆袭，时代交话费耿直BOY的逆袭，时代交话费</td>
-                                <td class="text-blue">Gimi叽咪管理员</td>
-                                <td>美容/瘦身/护肤</td>
-                                <td>2017-11-11 11:11</td>
-                                <td>665</td>
-                                <td class="text-blue">422</td>
-                                <td>80</td>
-                                <td class="text-blue">26</td>
-                                <td>26</td>
-                                <td class="text-red">禁用</td>
-                                <td><a href="" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>
+                            </tr> -->
+                            
                         </tbody>
                     </table>
                     <div class="content-footer">
@@ -326,12 +191,12 @@
                             当前显示 <span id="page-star">1</span> 到 <span id="page-end">9</span> 条，共 <span id="page-all">12</span>                            条记录。
                         </div>
                         <div class="page-btn">
-                            <a href="" class="btn btn-yellow">上一页</a>
+                            <!-- <a href="" class="btn btn-yellow">上一页</a>
                             <a href="" class="btn btn-yellow active">1</a>
                             <a href="" class="btn btn-yellow">2</a>
                             <a href="" class="btn btn-yellow">3</a>
                             <a href="" class="btn btn-yellow">4</a>
-                            <a href="" class="btn btn-yellow">下一页</a>
+                            <a href="" class="btn btn-yellow">下一页</a> -->
                         </div>
                     </div>
 
@@ -354,6 +219,7 @@
     <script src="js/tableSort.js"></script>
     <script src="js/nomoJS.js"></script>
     <script src="js/gimi.js"></script>
+    <script src="js/postPort.js"></script>
     <script>
 
     </script>

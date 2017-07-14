@@ -12,6 +12,7 @@
                 // 用户列表数据
                 var commentList = response.data.info;
                 var pageNum = response.data.sum;
+                var allComment = response.data.articlecomment_num;
                 var commentHtml = '';
                 var btnHtml = '';
                 // 渲染数据
@@ -69,7 +70,8 @@
                 //     userAll += pageNum[i].data.info.length;
                 // }
 
-                $('#page-all').html(10);
+                $('#page-all').html(allComment);
+                $('.num-icon').html(allComment);
                 $('#page-star').html((num - 1) * 9 + 1);
                 $('#page-end').html((num - 1) * 9 + commentList.length);
 
@@ -114,8 +116,8 @@
         }
         $.ajax({
             type: "POST",
-            url: "http://gimi321.com/admin.php/articlecommentmanage_adminforbidden",
-            data: { 'id': checkeds,'type': 1 },
+            url: "http://gimi321.com/admin.php/user_userforbidden",
+            data: { 'id': checkeds,'type': 3 },
             dataType: 'JSON',
             cache: false,
             success: function (response) {
@@ -140,8 +142,8 @@
         }
         $.ajax({
             type: "POST",
-            url: "http://gimi321.com/admin.php/articlecommentmanage_adminstart",
-            data: { 'id': checkeds,'type': 1 },
+            url: "http://gimi321.com/admin.php/articlemanage_audit",
+            data: { 'id': checkeds,'type': 2 },
             dataType: 'JSON',
             cache: false,
             success: function (response) {
@@ -188,7 +190,33 @@
             return false;
         }
     });
-
+     // 启用
+    $('#commentEnabled').on('click', function () {
+        var checkeds = checkbox();
+        if (checkeds == '') {
+            alert("请选择要设置的选项！");
+            return false;
+        }
+        $.ajax({
+            type: "POST",
+            url: "http://gimi321.com/admin.php/user_userstart",
+            data: { 'id': checkeds , 'type' : 3 },
+            dataType: 'JSON',
+            cache: false,
+            success: function (response) {
+                for (var i = 0; i < checkeds.length; i++) {
+                    var check = 'comment' + checkeds[i] + '-mycheckbox';
+                    $("#" + check).parent('td').siblings('.text-status').removeClass('text-yellow').addClass('text-purple').html('待审核');
+                    $("#" + check).attr('checked', false);
+                }
+                alert('设置成功！');
+                //  location.reload();
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("设置失败，请检查网络后重试。");
+            }
+        });
+    });
 
 
 })();

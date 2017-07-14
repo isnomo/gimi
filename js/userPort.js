@@ -12,6 +12,7 @@
                 // 用户列表数据
                 var userList = response.data.info;
                 var pageNum = response.data.sum;
+                var allUser = response.data.user_num;
                 var userHtml = '';
                 var btnHtml = '';
                 // 渲染数据
@@ -78,7 +79,8 @@
                 //     userAll += pageNum[i].data.info.length;
                 // }
 
-                $('#page-all').html(10);
+                $('#page-all').html(allUser);
+                $('.num-icon').html(allUser);
                 $('#page-star').html((num - 1) * 9 + 1);
                 $('#page-end').html((num - 1) * 9 + userList.length);
 
@@ -124,7 +126,7 @@
         $.ajax({
             type: "POST",
             url: "http://gimi321.com/admin.php/user_userforbidden",
-            data: { 'id': checkeds },
+            data: { 'id': checkeds , 'type' : 1 },
             dataType: 'JSON',
             cache: false,
             success: function (response) {
@@ -150,7 +152,7 @@
         $.ajax({
             type: "POST",
             url: "http://gimi321.com/admin.php/user_userstart",
-            data: { 'id': checkeds },
+            data: { 'id': checkeds , 'type' : 1 },
             dataType: 'JSON',
             cache: false,
             success: function (response) {
@@ -178,7 +180,7 @@
             $.ajax({
                 type: "POST",
                 url: "http://gimi321.com/admin.php/user_userdelete",
-                data: { 'id': checkeds },
+                data: { 'id': checkeds , 'type' : 1 },
                 dataType: 'JSON',
                 cache: false,
                 success: function (response) {
@@ -204,11 +206,12 @@
         if (e.keyCode == 13) {
             if ($(this).val() != '') {
                 e.preventDefault();
-                console.log('提交');
+                console.log('搜索');
+                var num = 1;
                 $.ajax({
                     type: "POST",
                     url: "http://gimi321.com/admin.php/user_useradminsearch",
-                    data: { 'search': $(this).val() },
+                    data: { 'search': $(this).val() , 'page' : num },
                     dataType: 'JSON',
                     cache: false,
                     success: function (response) {
@@ -217,9 +220,10 @@
                             $('#tableSort>tbody').html('<h3>搜索结果不存在！</h3>');
                             return false;
                         }
-                        // 用户列表数据
-                        var userList = response.data;
-                        // var pageNum = response.data.sum;
+                       // 用户列表数据
+                        var userList = response.data.info;
+                        var pageNum = response.data.sum;
+                        var allUser = response.data.user_num;
                         var userHtml = '';
                         var btnHtml = '';
                         // 渲染数据
@@ -236,59 +240,51 @@
                             var birth = y + "-" + m + "-" + d;
 
                             userHtml += `<tr>
-                                <td>
-                                    <input id="user${userInfo.id}-mycheckbox" name="user-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
-                                    <label aria-label="" role="checkbox" for="user${userInfo.id}-mycheckbox" class="checkbix"><span class=""></span></label>
-                                </td>
-                                <td>${ i + 1}</td>
-                                <td><img src="${userInfo.icon_link}" alt=""></td>
-                                <td>${userInfo.nickname}</td>
-                                <td>${userInfo.sex == 0 ? '女' : '男'}</td>
-                                <td>${birth}</td>
-                                <td class="table-text">${userInfo.intro}</td>
-                                <td>${userInfo.location}</td>
-                                <td>${userNum.score_num}</td>
-                                <td>${userNum.hot_num}</td>
-                                
-                                <td>${userInfo.phone}</td>
-                                <td>${userInfo.add_time}</td>
-                                <td class="text-blue">${userNum.publish_num}</td>
-                                <td class="text-blue">${userNum.comment_num}</td>
-                                <td class="text-blue">${userNum.order_num}</td>
-                                ${userInfo.is_state == 1 ? '<td class="text-status text-green">正常</td>' : '<td class="text-status text-yellow">禁用</td>'}
-                                <td><a href="user_detail.html?type=${userInfo.id}&icon_link=${userInfo.icon_link}&nickname=${userInfo.nickname}&sex=${userInfo.sex == 0 ? '女' : '男'}&birth=${birth}&intro=${userInfo.intro}&location=${userInfo.location}&score_num=${userNum.score_num}&hot_num=${userNum.hot_num}&phone=${userInfo.phone}&add_time=${userInfo.add_time}&publish_num=${userNum.publish_num}&comment_num=${userNum.comment_num}&order_num=${userNum.order_num}&is_state=${userInfo.is_state}" class="user-edit"><i class="fa fa-edit"></i></a></td>
-                            </tr>`;
+                                        <td>
+                                            <input id="user${userInfo.id}-mycheckbox" name="user-contorl" data-color="yellow" type="checkbox" class="checkbix" data-text="">
+                                            <label aria-label="" role="checkbox" for="user${userInfo.id}-mycheckbox" class="checkbix"><span class=""></span></label>
+                                        </td>
+                                        <td>${(num - 1) * 9 + i + 1}</td>
+                                        <td><img src="${userInfo.icon_link}" alt=""></td>
+                                        <td>${userInfo.nickname}</td>
+                                        <td>${userInfo.sex == 0 ? '女' : '男'}</td>
+                                        <td>${birth}</td>
+                                        <td class="table-text">${userInfo.intro}</td>
+                                        <td>${userInfo.location}</td>
+                                        <td>${userNum.score_num}</td>
+                                        <td>${userNum.hot_num}</td>
+                                        
+                                        <td>${userInfo.phone}</td>
+                                        <td>${userInfo.add_time}</td>
+                                        <td class="text-blue">${userNum.publish_num}</td>
+                                        <td class="text-blue">${userNum.comment_num}</td>
+                                        <td class="text-blue">${userNum.order_num}</td>
+                                        ${userInfo.is_state == 1 ? '<td class="text-status text-green">正常</td>' : '<td class="text-status text-yellow">禁用</td>'}
+                                        <td><a href="user_detail.html?type=${userInfo.id}&icon_link=${userInfo.icon_link}&nickname=${userInfo.nickname}&sex=${userInfo.sex == 0 ? '女' : '男'}&birth=${birth}&intro=${userInfo.intro}&location=${userInfo.location}&score_num=${userNum.score_num}&hot_num=${userNum.hot_num}&phone=${userInfo.phone}&add_time=${userInfo.add_time}&publish_num=${userNum.publish_num}&comment_num=${userNum.comment_num}&order_num=${userNum.order_num}&is_state=${userInfo.is_state}" class="user-edit"><i class="fa fa-edit"></i></a></td>
+                                    </tr>`;
                         }
                         // <td><a href="user_detail.html?type=${userInfo.id}&userImg=${userInfo.icon_link}&userName=${userInfo.nickname}&userSex=${userInfo.sex}&userBirth=${birth}&userIntro=${userInfo.intro}&userLocation=${userInfo.location}" class="user-edit"><i class="fa fa-edit"></i></a></td>
                         $('#tableSort>tbody').html(userHtml);
                         TableSort();
 
                         // 渲染分页按钮
-                        // if (pageNum > 1 && num > 1) {
-                        //     btnHtml += `<button type="button" class="btn btn-yellow">上一页</button>`;
-                        // }
-                        // for (var i = 1; i <= pageNum; i++) {
-                        //     if (i == num) {
-                        //         btnHtml += `<button type="button" class="btn btn-yellow active">${i}</button>`;
-                        //     } else {
-                        //         btnHtml += `<button type="button" class="btn btn-yellow">${i}</button>`;
-                        //     }
-                        // }
-                        // if (pageNum > 1 && num < pageNum) {
-                        //     btnHtml += `<button type="button" class="btn btn-yellow">下一页</button>`;
-                        // }
-                        // $('.page-btn').html(btnHtml);
+                        if (pageNum > 1 && num > 1) {
+                            btnHtml += `<button type="button" class="btn btn-yellow">上一页</button>`;
+                        }
+                        for (var i = 1; i <= pageNum; i++) {
+                            if (i == num) {
+                                btnHtml += `<button type="button" class="btn btn-yellow active">${i}</button>`;
+                            } else {
+                                btnHtml += `<button type="button" class="btn btn-yellow">${i}</button>`;
+                            }
+                        }
+                        if (pageNum > 1 && num < pageNum) {
+                            btnHtml += `<button type="button" class="btn btn-yellow">下一页</button>`;
+                        }
+                        $('.page-btn').html(btnHtml);
 
-                        // 总数据
-                        // for(var i = 1;i < pageNum; i++){
-                        //     var userAll;
-                        //     console.log(userList.length);
-                        //     userAll += pageNum[i].data.info.length;
-                        // }
-
-                        $('#page-all').html(10);
-                        // $('#page-star').html((num - 1) * 9 + 1);
-                        // $('#page-end').html((num - 1) * 9 + userList.length);
+                        $('#page-star').html((num - 1) * 9 + 1);
+                        $('#page-end').html((num - 1) * 9 + userList.length);
 
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -296,15 +292,17 @@
                         console.log("页面加载失败，请检查网络后重试");
                     }
                 });
-
-
             } else {
                 return false;
             }
         }
 
     });
-
+    $('#header-search').bind('input propertychange', function() {
+        if($(this).val() == ''){
+            pageAjax(1);
+        }
+    });
 
 
 })();

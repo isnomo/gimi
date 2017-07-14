@@ -92,6 +92,35 @@
         $(this).parent(".img-cover").remove();
     });
 
+    // 图片添加
+    $('#imgs-add-content>input').change(function(e){
+        var file = this.files[0];
+        var imgPath = $(this).val();
+        if (imgPath == "") {
+            return false;
+        }else{
+            var imgUrl = window.URL.createObjectURL(this.files[0]);
+        }
+        if(!/image\/\w+/.test(file.type)){
+            alert("请确保文件为图像类型");
+            return false;
+        }
+        if(file.size > 2000000){
+            alert('图片过大,不得超过2M！');
+            return false;
+        }
+        var imgs_html = '<div class="img-cover"><span></span><img src="'+imgUrl+'" width="109px" height="109px" alt=""></div>';
+        $("#imgs-add-content").before(imgs_html);
+
+        $(".img-cover").on("click", "span", function () {
+            $(this).parent(".img-cover").remove();
+         });
+    });
+    // 图片删除
+    $(".img-cover").on("click", "span", function () {
+        $(this).parent(".img-cover").remove();
+    });
+
 
     // 用户管理全选
     $('#userAll-mycheckbox').change(function () {
