@@ -79,4 +79,44 @@ var validator = function(){
 
         }
      });
+    // 文章编辑
+    $('#postEdit').bootstrapValidator({
+        message: '输入的内容无效',
+        fields: {
+            postTitle: {
+                validators: {
+                    notEmpty: {
+                        message: '文章标题不能为空！'
+                    },
+                    stringLength: {
+                            min: 1,
+                            max: 30,
+                            message: '文章标题不得超过30字!'
+                    }
+                }
+            },
+            content: {
+                validators: {
+                    notEmpty: {
+                        message: '正文不能为空！'
+                    }
+                }
+            },
+            zt: {
+                validators: {
+                    notEmpty: {
+                        message: '状态为必选项！'
+                    }
+                }
+            },
+            zd: {
+                validators: {
+                    notEmpty: {
+                        message: '是否置顶为必选项！'
+                    }
+                }
+            }
+
+        }
+     });
 }
